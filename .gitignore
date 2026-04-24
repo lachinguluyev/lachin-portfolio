@@ -1,0 +1,13 @@
+AGENT_CREATION_CHECKLIST.md
+AGENT_REGISTRY.md
+CONVENTIONS.md
+NEW_AGENT_BOOTSTRAP.md
+README.md
+agents/
+examples/
+journal/
+knowledge/
+orchestrator/
+templates/
+memory/
+.claude/
