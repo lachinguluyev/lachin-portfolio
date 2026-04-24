@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LACHIN GULUYEV</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="header">
+    <nav class="nav">
+      <a href="index.html" class="nav-logo">LACHIN GULUYEV</a>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <span class="toggle-text">Menu</span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Gallery</a></li>
+        <li><a href="real-time-app.html">Real-Time App</a></li>
+        <li><a href="course.html">Course</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main">
+    <div class="gallery" id="gallery"></div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-copy">© 2025 Lachin Guluyev</span>
+      <div class="footer-social">
+        <a href="#" target="_blank" rel="noopener">Instagram</a>
+        <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="#" target="_blank" rel="noopener">Behance</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lb-close" id="lbClose" aria-label="Close">&#x2715;</button>
+    <button class="lb-prev"  id="lbPrev"  aria-label="Previous">&#x2039;</button>
+    <button class="lb-next"  id="lbNext"  aria-label="Next">&#x203a;</button>
+    <div class="lb-content" id="lbContent"></div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
