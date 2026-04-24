@@ -1,34 +1,44 @@
 /* ─────────────────────────────────────────────────────────
    GALLERY DATA
-   ─────────────────────────────────────────────────────────
    Add your files to assets/images/ and assets/videos/
    then list them here.
 
-   type  : 'image' | 'video'
-   src   : path to the media file
-   poster: (video only) thumbnail image shown before play
-   title : caption shown on hover
+   type    : 'image' | 'video'
+   src     : path to the media file
+   poster  : (video only) thumbnail shown before play
+   title   : caption shown on hover & in side panel
+   category: 'interiors' | 'facade' | 'products'
 ───────────────────────────────────────────────────────── */
 const galleryItems = [
   // ── IMAGES ──
-  // { type: 'image', src: 'assets/images/photo-01.jpg', title: 'Title' },
+  // { type: 'image', src: 'assets/images/photo-01.jpg', title: 'Title', category: 'interiors' },
+  // { type: 'image', src: 'assets/images/photo-02.jpg', title: 'Title', category: 'facade' },
+  // { type: 'image', src: 'assets/images/photo-03.jpg', title: 'Title', category: 'products' },
 
   // ── VIDEOS ──
-  // { type: 'video', src: 'assets/videos/video-01.mp4', poster: 'assets/images/poster-01.jpg', title: 'Title' },
+  // { type: 'video', src: 'assets/videos/video-01.mp4', poster: 'assets/images/poster-01.jpg', title: 'Title', category: 'interiors' },
 ];
 
 /* ─────────────────────────────────────────────────────────
-   RENDER GALLERY
+   GALLERY RENDER + FILTER
 ───────────────────────────────────────────────────────── */
-const galleryEl = document.getElementById('gallery');
+const galleryEl  = document.getElementById('gallery');
+const filterBar  = document.getElementById('filterBar');
+let activeFilter = 'all';
 
 function buildGallery() {
   if (!galleryEl) return;
+  galleryEl.innerHTML = '';
 
-  galleryItems.forEach((item, i) => {
+  const visible = activeFilter === 'all'
+    ? galleryItems
+    : galleryItems.filter(item => item.category === activeFilter);
+
+  visible.forEach((item, i) => {
+    const originalIndex = galleryItems.indexOf(item);
     const div = document.createElement('div');
     div.className = 'g-item';
-    div.dataset.index = i;
+    div.dataset.index = originalIndex;
 
     if (item.type === 'image') {
       div.innerHTML = `
@@ -48,46 +58,116 @@ function buildGallery() {
       div.addEventListener('mouseleave', () => { vid.pause(); vid.currentTime = 0; });
     }
 
-    div.addEventListener('click', () => openLightbox(i));
+    div.addEventListener('click', () => openPanel(originalIndex, visible.map(v => galleryItems.indexOf(v))));
     galleryEl.appendChild(div);
   });
 }
 
+/* ─── FILTER BAR BUTTONS ─────────────────────────────── */
+if (filterBar) {
+  filterBar.querySelectorAll('.f-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      activeFilter = btn.dataset.filter;
+      filterBar.querySelectorAll('.f-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      syncSubActive(activeFilter);
+      buildGallery();
+    });
+  });
+}
+
 /* ─────────────────────────────────────────────────────────
-   LIGHTBOX
+   NAV DROPDOWN (Gallery sub-menu)
 ───────────────────────────────────────────────────────── */
-const lightbox   = document.getElementById('lightbox');
-const lbContent  = document.getElementById('lbContent');
-const lbClose    = document.getElementById('lbClose');
-const lbPrev     = document.getElementById('lbPrev');
-const lbNext     = document.getElementById('lbNext');
+const galleryNavItem = document.querySelector('.nav-has-sub');
+const galleryNavLink = document.getElementById('galleryNavLink');
 
-let currentIdx = 0;
+if (galleryNavLink) {
+  galleryNavLink.addEventListener('click', e => {
+    if (window.location.pathname.includes('index') || window.location.pathname.endsWith('/') || window.location.pathname === '') {
+      e.preventDefault();
+    }
+    galleryNavItem.classList.toggle('sub-open');
+  });
+}
 
-function openLightbox(idx) {
-  currentIdx = idx;
-  renderLightboxItem();
-  lightbox.classList.add('open');
-  lightbox.setAttribute('aria-hidden', 'false');
+// close dropdown on outside click
+document.addEventListener('click', e => {
+  if (galleryNavItem && !galleryNavItem.contains(e.target)) {
+    galleryNavItem.classList.remove('sub-open');
+  }
+});
+
+// nav sub-links trigger filter
+document.querySelectorAll('.nav-sub a[data-filter]').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const filter = link.dataset.filter;
+    activeFilter = filter;
+
+    // sync filter bar
+    if (filterBar) {
+      filterBar.querySelectorAll('.f-btn').forEach(b => {
+        b.classList.toggle('active', b.dataset.filter === filter);
+      });
+      filterBar.classList.add('visible');
+    }
+
+    syncSubActive(filter);
+    buildGallery();
+    galleryNavItem.classList.remove('sub-open');
+  });
+});
+
+function syncSubActive(filter) {
+  document.querySelectorAll('.nav-sub a[data-filter]').forEach(a => {
+    a.classList.toggle('sub-active', a.dataset.filter === filter);
+  });
+}
+
+/* ─────────────────────────────────────────────────────────
+   SIDE PANEL
+───────────────────────────────────────────────────────── */
+const panel       = document.getElementById('sidePanel');
+const overlay     = document.getElementById('spOverlay');
+const spMedia     = document.getElementById('spMedia');
+const spTitle     = document.getElementById('spTitle');
+const spInfoTitle = document.getElementById('spInfoTitle');
+const spClose     = document.getElementById('spClose');
+const spPrev      = document.getElementById('spPrev');
+const spNext      = document.getElementById('spNext');
+
+let currentIdx      = 0;
+let currentIndexSet = [];
+
+function openPanel(idx, indexSet) {
+  currentIdx      = idx;
+  currentIndexSet = indexSet || galleryItems.map((_, i) => i);
+  renderPanelItem();
+  panel.classList.add('open');
+  overlay.classList.add('open');
+  panel.setAttribute('aria-hidden', 'false');
   document.body.style.overflow = 'hidden';
 }
 
-function closeLightbox() {
-  lightbox.classList.remove('open');
-  lightbox.setAttribute('aria-hidden', 'true');
-  lbContent.innerHTML = '';
+function closePanel() {
+  panel.classList.remove('open');
+  overlay.classList.remove('open');
+  panel.setAttribute('aria-hidden', 'true');
   document.body.style.overflow = '';
+  setTimeout(() => { if (spMedia) spMedia.innerHTML = ''; }, 450);
 }
 
-function renderLightboxItem() {
+function renderPanelItem() {
   const item = galleryItems[currentIdx];
-  lbContent.innerHTML = '';
+  if (!item || !spMedia) return;
+  spMedia.innerHTML = '';
 
   if (item.type === 'image') {
     const img = document.createElement('img');
     img.src = item.src;
     img.alt = item.title;
-    lbContent.appendChild(img);
+    spMedia.appendChild(img);
   } else {
     const vid = document.createElement('video');
     vid.src = item.src;
@@ -95,30 +175,31 @@ function renderLightboxItem() {
     vid.controls = true;
     vid.autoplay = true;
     vid.playsinline = true;
-    lbContent.appendChild(vid);
+    spMedia.appendChild(vid);
   }
+
+  const pos = currentIndexSet.indexOf(currentIdx) + 1;
+  if (spTitle)     spTitle.textContent     = `${pos} / ${currentIndexSet.length}`;
+  if (spInfoTitle) spInfoTitle.textContent = item.title;
 }
 
-function stepLightbox(dir) {
-  currentIdx = (currentIdx + dir + galleryItems.length) % galleryItems.length;
-  renderLightboxItem();
+function stepPanel(dir) {
+  const pos  = currentIndexSet.indexOf(currentIdx);
+  const next = (pos + dir + currentIndexSet.length) % currentIndexSet.length;
+  currentIdx = currentIndexSet[next];
+  renderPanelItem();
 }
 
-if (lbClose) lbClose.addEventListener('click', closeLightbox);
-if (lbPrev)  lbPrev.addEventListener('click',  () => stepLightbox(-1));
-if (lbNext)  lbNext.addEventListener('click',  () => stepLightbox(+1));
-
-if (lightbox) {
-  lightbox.addEventListener('click', e => {
-    if (e.target === lightbox) closeLightbox();
-  });
-}
+if (spClose)  spClose.addEventListener('click', closePanel);
+if (spPrev)   spPrev.addEventListener('click',  () => stepPanel(-1));
+if (spNext)   spNext.addEventListener('click',  () => stepPanel(+1));
+if (overlay)  overlay.addEventListener('click', closePanel);
 
 document.addEventListener('keydown', e => {
-  if (!lightbox?.classList.contains('open')) return;
-  if (e.key === 'Escape')      closeLightbox();
-  if (e.key === 'ArrowLeft')   stepLightbox(-1);
-  if (e.key === 'ArrowRight')  stepLightbox(+1);
+  if (!panel?.classList.contains('open')) return;
+  if (e.key === 'Escape')     closePanel();
+  if (e.key === 'ArrowLeft')  stepPanel(-1);
+  if (e.key === 'ArrowRight') stepPanel(+1);
 });
 
 /* ─────────────────────────────────────────────────────────

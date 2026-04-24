@@ -18,7 +18,15 @@
         <span class="toggle-text">Menu</span>
       </button>
       <ul class="nav-links">
-        <li><a href="index.html" class="active">Gallery</a></li>
+        <li class="nav-has-sub">
+          <a href="index.html" class="active" id="galleryNavLink">Gallery</a>
+          <ul class="nav-sub">
+            <li><a href="#" data-filter="all">All</a></li>
+            <li><a href="#" data-filter="interiors">Interiors</a></li>
+            <li><a href="#" data-filter="facade">Facade</a></li>
+            <li><a href="#" data-filter="products">Products</a></li>
+          </ul>
+        </li>
         <li><a href="real-time-app.html">Real-Time App</a></li>
         <li><a href="course.html">Course</a></li>
         <li><a href="about.html">About</a></li>
@@ -28,6 +36,12 @@
   </header>
 
   <main class="main">
+    <div class="filter-bar" id="filterBar">
+      <button class="f-btn active" data-filter="all">All</button>
+      <button class="f-btn" data-filter="interiors">Interiors</button>
+      <button class="f-btn" data-filter="facade">Facade</button>
+      <button class="f-btn" data-filter="products">Products</button>
+    </div>
     <div class="gallery" id="gallery"></div>
   </main>
 
@@ -42,12 +56,22 @@
     </div>
   </footer>
 
-  <div class="lightbox" id="lightbox" aria-hidden="true">
-    <button class="lb-close" id="lbClose" aria-label="Close">&#x2715;</button>
-    <button class="lb-prev"  id="lbPrev"  aria-label="Previous">&#x2039;</button>
-    <button class="lb-next"  id="lbNext"  aria-label="Next">&#x203a;</button>
-    <div class="lb-content" id="lbContent"></div>
-  </div>
+  <div class="sp-overlay" id="spOverlay"></div>
+
+  <aside class="side-panel" id="sidePanel" aria-hidden="true">
+    <div class="sp-bar">
+      <span class="sp-title" id="spTitle"></span>
+      <div class="sp-nav">
+        <button class="sp-prev" id="spPrev" aria-label="Previous">&#x2039;</button>
+        <button class="sp-next" id="spNext" aria-label="Next">&#x203a;</button>
+        <button class="sp-close" id="spClose" aria-label="Close">&#x2715;</button>
+      </div>
+    </div>
+    <div class="sp-media" id="spMedia"></div>
+    <div class="sp-info">
+      <span class="sp-info-title" id="spInfoTitle"></span>
+    </div>
+  </aside>
 
   <script src="js/main.js"></script>
 </body>
