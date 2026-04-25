@@ -24,34 +24,54 @@
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html" class="active">Contact</a></li>
       </ul>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
     </nav>
   </header>
 
   <main class="main">
     <div class="page-wrap">
-      <p class="page-heading">Contact</p>
 
-      <div class="contact-wrap">
-        <h2>Get in touch</h2>
+      <div class="contact-layout">
 
-        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-          <div class="form-row">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required />
+        <!-- LEFT: Map -->
+        <div class="contact-map-col">
+          <p class="contact-col-label">Location: <span id="locationName">Munich</span></p>
+          <div class="map-tabs">
+            <button class="map-tab active" data-city="Munich"
+              data-src="https://maps.google.com/maps?q=48.1888519,11.4669716&output=embed&z=18">Munich</button>
+            <button class="map-tab" data-city="Baku"
+              data-src="https://maps.google.com/maps?q=40.3751127,49.8522095&output=embed&z=17">Baku</button>
+            <button class="map-tab" data-city="USA"
+              data-src="https://maps.google.com/maps?q=41.8089191,-88.0111746&output=embed&z=13">USA</button>
           </div>
-
-          <div class="form-row">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required />
+          <div class="map-frame">
+            <iframe id="mapFrame"
+              src="https://maps.google.com/maps?q=48.1888519,11.4669716&output=embed&z=18"
+              allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
+        </div>
 
-          <div class="form-row">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-          </div>
+        <!-- RIGHT: Form -->
+        <div class="contact-form-col">
+          <p class="contact-col-label">Contact: lachinquluyev@gmail.com</p>
+          <form action="https://formspree.io/f/lachinquluyev@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="New message from portfolio" />
+            <div class="form-row">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+            <div class="form-row">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-row">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="6" required></textarea>
+            </div>
+            <button type="submit" class="btn-send">Send Message</button>
+          </form>
+        </div>
 
-          <button type="submit" class="btn-send">Send Message</button>
-        </form>
       </div>
     </div>
   </main>
@@ -60,13 +80,24 @@
     <div class="footer-inner">
       <span class="footer-copy">© 2025 Lachin Guluyev</span>
       <div class="footer-social">
-        <a href="#" target="_blank" rel="noopener">Instagram</a>
-        <a href="#" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="#" target="_blank" rel="noopener">Behance</a>
+        <a href="https://www.instagram.com/lachinguluyev" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.linkedin.com/in/lachinguluyev/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.behance.net/lachinguluyev" target="_blank" rel="noopener">Behance</a>
+        <a href="https://www.youtube.com/@lachinguluyev" target="_blank" rel="noopener">Youtube</a>
       </div>
     </div>
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+    document.querySelectorAll('.map-tab').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.map-tab').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById('mapFrame').src = btn.dataset.src;
+        document.getElementById('locationName').textContent = btn.dataset.city;
+      });
+    });
+  </script>
 </body>
 </html>

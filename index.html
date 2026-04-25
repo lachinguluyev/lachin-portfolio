@@ -32,6 +32,7 @@
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
     </nav>
   </header>
 
@@ -49,29 +50,20 @@
     <div class="footer-inner">
       <span class="footer-copy">© 2025 Lachin Guluyev</span>
       <div class="footer-social">
-        <a href="#" target="_blank" rel="noopener">Instagram</a>
-        <a href="#" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="#" target="_blank" rel="noopener">Behance</a>
+        <a href="https://www.instagram.com/lachinguluyev" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.linkedin.com/in/lachinguluyev/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.behance.net/lachinguluyev" target="_blank" rel="noopener">Behance</a>
+        <a href="https://www.youtube.com/@lachinguluyev" target="_blank" rel="noopener">Youtube</a>
       </div>
     </div>
   </footer>
 
-  <div class="sp-overlay" id="spOverlay"></div>
-
-  <aside class="side-panel" id="sidePanel" aria-hidden="true">
-    <div class="sp-bar">
-      <span class="sp-title" id="spTitle"></span>
-      <div class="sp-nav">
-        <button class="sp-prev" id="spPrev" aria-label="Previous">&#x2039;</button>
-        <button class="sp-next" id="spNext" aria-label="Next">&#x203a;</button>
-        <button class="sp-close" id="spClose" aria-label="Close">&#x2715;</button>
-      </div>
-    </div>
-    <div class="sp-media" id="spMedia"></div>
-    <div class="sp-info">
-      <span class="sp-info-title" id="spInfoTitle"></span>
-    </div>
-  </aside>
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lb-prev"  id="lbPrev"  aria-label="Previous">&#8249;</button>
+    <div class="lb-media" id="lbMedia"></div>
+    <button class="lb-next"  id="lbNext"  aria-label="Next">&#8250;</button>
+    <button class="lb-close" id="lbClose" aria-label="Close">&#x2715;</button>
+  </div>
 
   <script src="js/main.js"></script>
 </body>
