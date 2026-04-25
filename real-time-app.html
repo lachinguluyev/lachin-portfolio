@@ -32,57 +32,85 @@
     <div class="page-wrap">
       <p class="page-heading">Real-Time App</p>
 
-      <!-- YouTube Video -->
-      <div class="rta-video-wrap">
-        <div class="rta-video-ratio">
+      <!-- Videos Row -->
+      <section class="rta-section">
+        <div class="rta-row">
+          <div class="rta-card" data-yt="O2xC4U-ouK8">
+            <img src="https://img.youtube.com/vi/O2xC4U-ouK8/maxresdefault.jpg" alt="Real-Time App 1" />
+            <div class="rta-play">&#9654;</div>
+          </div>
+          <div class="rta-card" data-yt="pf0lx6K9D1w">
+            <img src="https://img.youtube.com/vi/pf0lx6K9D1w/maxresdefault.jpg" alt="Real-Time App 2" />
+            <div class="rta-play">&#9654;</div>
+          </div>
+          <div class="rta-card" data-yt="a_ybmyr-shw">
+            <img src="https://img.youtube.com/vi/a_ybmyr-shw/maxresdefault.jpg" alt="Real-Time App 3" />
+            <div class="rta-play">&#9654;</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Screenshots Row -->
+      <section class="rta-section">
+        <div class="rta-row">
+          <div class="rta-card" data-img="assets/images/REALTIME1.jpg">
+            <img src="assets/images/REALTIME1.jpg" alt="Screenshot 1" />
+          </div>
+          <div class="rta-card" data-img="assets/images/REALTIME2.jpg">
+            <img src="assets/images/REALTIME2.jpg" alt="Screenshot 2" />
+          </div>
+          <div class="rta-card" data-img="assets/images/REALTIME3.jpg">
+            <img src="assets/images/REALTIME3.jpg" alt="Screenshot 3" />
+          </div>
+        </div>
+      </section>
+
+      <!-- 360 Virtual Tours -->
+      <section class="rta-section">
+        <p class="rta-section-label">360 Virtual Tours</p>
+        <div class="rta-tours-row">
           <iframe
-            src="https://www.youtube.com/embed/pf0lx6K9D1w"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen></iframe>
+            src="https://kuula.co/share/collection/7F886?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1"
+            allow="xr-spatial-tracking; gyroscope; accelerometer"
+            allowfullscreen scrolling="no"></iframe>
+          <iframe
+            src="https://kuula.co/share/collection/7qjYz?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1"
+            allow="xr-spatial-tracking; gyroscope; accelerometer"
+            allowfullscreen scrolling="no"></iframe>
+          <iframe
+            src="https://kuula.co/share/collection/71RBv?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1"
+            allow="xr-spatial-tracking; gyroscope; accelerometer"
+            allowfullscreen scrolling="no"></iframe>
         </div>
-      </div>
+      </section>
 
-      <!-- Screenshot Grid -->
-      <div class="rta-grid">
-        <div class="rta-img-wrap">
-          <img src="assets/images/REALTIME1.jpg" alt="Real-Time App — Street View" />
+      <!-- Animation -->
+      <section class="rta-section">
+        <p class="rta-section-label">Animation</p>
+        <div class="rta-row">
+          <div class="rta-card" data-yt="FBtxzU0vlhE">
+            <img src="https://img.youtube.com/vi/FBtxzU0vlhE/maxresdefault.jpg" alt="Animation 1" />
+            <div class="rta-play">&#9654;</div>
+          </div>
+          <div class="rta-card" data-yt="9j5uAHOdq3o">
+            <img src="https://img.youtube.com/vi/9j5uAHOdq3o/maxresdefault.jpg" alt="Animation 2" />
+            <div class="rta-play">&#9654;</div>
+          </div>
+          <div class="rta-card" data-yt="LdqgkCRyx5E">
+            <img src="https://img.youtube.com/vi/LdqgkCRyx5E/maxresdefault.jpg" alt="Animation 3" />
+            <div class="rta-play">&#9654;</div>
+          </div>
         </div>
-        <div class="rta-img-wrap">
-          <img src="assets/images/REALTIME2.jpg" alt="Real-Time App — Surroundings" />
-        </div>
-        <div class="rta-img-wrap">
-          <img src="assets/images/REALTIME3.jpg" alt="Real-Time App — Interior" />
-        </div>
-      </div>
-
-      <!-- 360 Virtual -->
-      <p class="rta-section-title">360 Virtual</p>
-
-      <div class="rta-kuula-list">
-        <iframe
-          src="https://kuula.co/share/collection/7F886?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1"
-          width="100%" height="640"
-          allow="xr-spatial-tracking; gyroscope; accelerometer"
-          allowfullscreen scrolling="no" frameborder="0"></iframe>
-
-        <iframe
-          src="https://kuula.co/share/collection/7qjYz?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1"
-          width="100%" height="640"
-          allow="xr-spatial-tracking; gyroscope; accelerometer"
-          allowfullscreen scrolling="no" frameborder="0"></iframe>
-
-        <iframe
-          src="https://kuula.co/share/collection/71RBv?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1"
-          width="100%" height="640"
-          allow="xr-spatial-tracking; gyroscope; accelerometer"
-          allowfullscreen scrolling="no" frameborder="0"></iframe>
-      </div>
+      </section>
 
     </div>
   </main>
+
+  <!-- RTA Lightbox -->
+  <div class="rta-lb" id="rtaLb">
+    <button class="rta-lb-close" id="rtaLbClose">&#x2715;</button>
+    <div class="rta-lb-inner" id="rtaLbInner"></div>
+  </div>
 
   <footer class="footer">
     <div class="footer-inner">
@@ -97,5 +125,39 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+    const rtaLb     = document.getElementById('rtaLb');
+    const rtaLbInner = document.getElementById('rtaLbInner');
+    const rtaLbClose = document.getElementById('rtaLbClose');
+
+    function openRtaLb(html) {
+      rtaLbInner.innerHTML = html;
+      rtaLb.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeRtaLb() {
+      rtaLb.classList.remove('open');
+      rtaLbInner.innerHTML = '';
+      document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('.rta-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const yt  = card.dataset.yt;
+        const img = card.dataset.img;
+        if (yt) {
+          openRtaLb(`<iframe src="https://www.youtube.com/embed/${yt}?autoplay=1&rel=0" allow="autoplay; fullscreen" allowfullscreen></iframe>`);
+        } else if (img) {
+          openRtaLb(`<img src="${img}" alt="" />`);
+        }
+      });
+    });
+
+    rtaLb.addEventListener('click', e => { if (e.target === rtaLb) closeRtaLb(); });
+    rtaLbClose.addEventListener('click', closeRtaLb);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeRtaLb(); });
+  </script>
+
 </body>
 </html>
