@@ -419,56 +419,62 @@ body {
 
 /* Awards & Media */
 .awards-section {
-  margin-top: 80px;
-  padding-top: 56px;
+  margin-top: 100px;
+  padding-top: 64px;
   border-top: 1px solid var(--border);
 }
 
 .awards-heading {
-  font-size: 13px;
-  letter-spacing: 0.2em;
+  font-size: 32px;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--text);
   text-align: center;
-  margin-bottom: 48px;
+  margin-bottom: 72px;
 }
 
 .award-entries {
   display: flex;
   flex-direction: column;
-  gap: 60px;
+  gap: 80px;
 }
 
 .award-entry {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 48px;
+  gap: 60px;
   align-items: center;
 }
 
 .award-entry-media {
-  flex-shrink: 0;
+  width: 100%;
 }
 
-.award-yt-thumb {
+/* Single unified thumb style for both video and image entries */
+.award-yt-thumb,
+.award-img-thumb {
   display: block;
   position: relative;
+  width: 100%;
   aspect-ratio: 16 / 9;
   overflow: hidden;
   background: #111;
 }
 
-.award-yt-thumb img {
+.award-yt-thumb img,
+.award-img-thumb img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   display: block;
   transition: transform var(--ease), opacity var(--ease);
 }
 
-.award-yt-thumb:hover img {
+.award-yt-thumb:hover img,
+.award-img-thumb:hover img {
   transform: scale(1.04);
-  opacity: 0.75;
+  opacity: 0.8;
 }
 
 .award-yt-play {
@@ -478,30 +484,8 @@ body {
   align-items: center;
   justify-content: center;
   color: rgba(255,255,255,0.85);
-  font-size: 38px;
+  font-size: 44px;
   pointer-events: none;
-}
-
-.award-img-thumb {
-  display: block;
-  position: relative;
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-  background: #111;
-}
-
-.award-img-thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  display: block;
-  transition: transform var(--ease), opacity var(--ease);
-}
-
-.award-img-thumb:hover img {
-  transform: scale(1.04);
-  opacity: 0.85;
 }
 
 .award-entry-text {
