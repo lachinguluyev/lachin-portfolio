@@ -14,7 +14,7 @@ button { cursor: pointer; background: none; border: none; font: inherit; }
   --muted:       #9a9a9a;
   --border:      #e8e8e8;
   --header-bg:   rgba(253,253,253,0.88);
-  --nav-h:       60px;
+  --nav-h:       72px;
   --gap:         2px;
   --font:        'Tenor Sans', serif;
   --ease:        0.28s ease;
@@ -134,7 +134,7 @@ body {
 }
 
 .nav-logo {
-  font-size: 15px;
+  font-size: 18px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   white-space: nowrap;
