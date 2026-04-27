@@ -303,7 +303,7 @@ body {
   aspect-ratio: 4 / 5;
   position: relative;
   overflow: hidden;
-  cursor: default;
+  cursor: pointer;
   background: #111;
 }
 
@@ -376,6 +376,7 @@ body {
   transform: scale(0.94);
   transition: transform 0.55s var(--ease-out);
   line-height: 0;
+  position: relative;
 }
 
 .lightbox.open .lb-media { transform: scale(1); }
@@ -386,6 +387,22 @@ body {
   max-width: 88vw;
   max-height: 88vh;
   object-fit: contain;
+}
+
+.lb-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 32px 20px 16px 20px;
+  background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 100%);
+  color: rgba(255,255,255,0.82);
+  font-family: var(--font);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  pointer-events: none;
+  text-align: left;
 }
 
 .lb-prev, .lb-next, .lb-close {
