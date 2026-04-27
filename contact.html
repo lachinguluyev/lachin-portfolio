@@ -53,22 +53,44 @@
 
         <!-- RIGHT: Form -->
         <div class="contact-form-col">
-          <p class="contact-col-label">Contact: lachinquluyev@gmail.com</p>
-          <form action="https://formspree.io/f/lachinquluyev@gmail.com" method="POST">
-            <input type="hidden" name="_subject" value="New message from portfolio" />
+          <p class="contact-col-label">Contact: studio@lachinguluyev.com</p>
+          <form id="contactForm" enctype="multipart/form-data" novalidate>
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_subject" value="New inquiry from portfolio" />
+            <input type="hidden" name="_template" value="table" />
+
             <div class="form-row">
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" required />
+              <label for="fname">Name</label>
+              <input type="text" id="fname" name="name" required />
             </div>
+
             <div class="form-row">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" required />
+              <label for="femail">Mail</label>
+              <input type="email" id="femail" name="email" required />
             </div>
+
             <div class="form-row">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" rows="6" required></textarea>
+              <label for="fsubject">Subject</label>
+              <input type="text" id="fsubject" name="subject" required />
             </div>
-            <button type="submit" class="btn-send">Send Message</button>
+
+            <div class="form-row">
+              <label>Files</label>
+              <label class="form-file-wrap" for="contactFiles">
+                <span class="form-file-btn">Choose files</span>
+                <span class="form-file-name" id="fileName">No file chosen</span>
+                <span class="form-file-hint">Max 100 MB</span>
+              </label>
+              <input type="file" id="contactFiles" name="attachment" multiple />
+            </div>
+
+            <div class="form-row">
+              <label for="fmessage">Description or Message</label>
+              <textarea id="fmessage" name="message" rows="5" required></textarea>
+            </div>
+
+            <p id="formStatus" class="form-status"></p>
+            <button type="submit" class="btn-send">Send</button>
           </form>
         </div>
 
@@ -90,6 +112,7 @@
 
   <script src="js/main.js"></script>
   <script>
+    /* ── Map tabs ── */
     document.querySelectorAll('.map-tab').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('.map-tab').forEach(b => b.classList.remove('active'));
@@ -97,6 +120,64 @@
         document.getElementById('mapFrame').src = btn.dataset.src;
         document.getElementById('locationName').textContent = btn.dataset.city;
       });
+    });
+
+    /* ── File input ── */
+    const contactFiles = document.getElementById('contactFiles');
+    const fileNameEl   = document.getElementById('fileName');
+
+    contactFiles.addEventListener('change', () => {
+      const files = Array.from(contactFiles.files);
+      const totalSize = files.reduce((s, f) => s + f.size, 0);
+
+      if (totalSize > 100 * 1024 * 1024) {
+        fileNameEl.textContent = 'Exceeds 100 MB limit';
+        fileNameEl.classList.add('form-file-error');
+        contactFiles.value = '';
+        return;
+      }
+      fileNameEl.classList.remove('form-file-error');
+      fileNameEl.textContent = files.length === 0 ? 'No file chosen'
+                             : files.length === 1 ? files[0].name
+                             : files.length + ' files selected';
+    });
+
+    /* ── Form submit ── */
+    const contactForm = document.getElementById('contactForm');
+    const formStatus  = document.getElementById('formStatus');
+
+    contactForm.addEventListener('submit', async e => {
+      e.preventDefault();
+      const btn = contactForm.querySelector('.btn-send');
+
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+      formStatus.className = 'form-status';
+      formStatus.textContent = '';
+
+      try {
+        const res = await fetch('https://formsubmit.co/ajax/studio@lachinguluyev.com', {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: new FormData(contactForm)
+        });
+
+        if (res.ok) {
+          formStatus.textContent = 'Message sent successfully.';
+          formStatus.classList.add('form-status--ok');
+          contactForm.reset();
+          fileNameEl.textContent = 'No file chosen';
+          fileNameEl.classList.remove('form-file-error');
+        } else {
+          throw new Error();
+        }
+      } catch {
+        formStatus.textContent = 'Something went wrong. Please try again.';
+        formStatus.classList.add('form-status--err');
+      }
+
+      btn.disabled = false;
+      btn.textContent = 'Send';
     });
   </script>
 </body>
