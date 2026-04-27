@@ -433,30 +433,66 @@ body {
   margin-bottom: 48px;
 }
 
-.awards-grid {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 12px;
+.award-entries {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
 }
 
-.award-item {
+.award-entry {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.award-entry-media {
+  flex-shrink: 0;
+}
+
+.award-yt-thumb {
+  display: block;
+  position: relative;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
-  aspect-ratio: 3 / 4;
   background: #111;
 }
 
-.award-item img {
+.award-yt-thumb img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
   display: block;
   transition: transform var(--ease), opacity var(--ease);
 }
 
-.award-item:hover img {
-  transform: scale(1.03);
-  opacity: 0.85;
+.award-yt-thumb:hover img {
+  transform: scale(1.04);
+  opacity: 0.75;
+}
+
+.award-yt-play {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.85);
+  font-size: 38px;
+  pointer-events: none;
+}
+
+.award-entry-text {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.award-entry-text p {
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--text);
+  margin: 0;
 }
 
 /* ─── CONTACT ────────────────────────────────────────── */
@@ -784,7 +820,7 @@ body {
   .cards   { grid-template-columns: 1fr; }
 
   .about-grid    { grid-template-columns: 1fr; gap: 40px; }
-  .awards-grid   { grid-template-columns: repeat(3, 1fr); }
+  .award-entry   { grid-template-columns: 1fr; gap: 24px; }
   .contact-layout { grid-template-columns: 1fr; gap: 40px; }
   .rta-row       { grid-template-columns: 1fr; }
   .rta-tours-row { grid-template-columns: 1fr; }
