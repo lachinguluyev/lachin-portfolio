@@ -858,12 +858,12 @@ input[type="file"] { display: none; }
 .footer-social { display: flex; gap: 24px; }
 
 .footer-social a {
-  font-size: 11px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  display: flex;
+  align-items: center;
   color: var(--muted);
   transition: color var(--ease);
 }
+.footer-social a svg { display: block; }
 
 .footer-social a:hover { color: var(--text); }
 
