@@ -151,7 +151,7 @@ body {
   font-size: 13px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--text);
   transition: color var(--ease);
   position: relative;
 }
@@ -167,12 +167,7 @@ body {
   transition: width var(--ease-out);
 }
 
-.nav-links a:hover { color: var(--text); }
 .nav-links a:hover::after { width: 100%; }
-
-.nav-links a.active {
-  color: var(--text);
-}
 .nav-links a.active::after { width: 100%; }
 
 .nav-toggle {
