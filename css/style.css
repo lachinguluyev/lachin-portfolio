@@ -654,6 +654,17 @@ body {
 .footer-social a:hover { color: var(--text); }
 
 /* ─── REAL-TIME APP ──────────────────────────────────── */
+.rta-main-heading {
+  font-size: 28px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--text);
+  margin-bottom: 56px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--border);
+}
+
 .rta-section {
   margin-bottom: 60px;
 }
