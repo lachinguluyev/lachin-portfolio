@@ -148,8 +148,8 @@ body {
 }
 
 .nav-links a {
-  font-size: 11px;
-  letter-spacing: 0.14em;
+  font-size: 13px;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--muted);
   transition: color var(--ease);
