@@ -187,39 +187,45 @@ body {
 .theme-toggle {
   margin-left: 24px;
   flex-shrink: 0;
-  background: transparent;
+  position: relative;
+  width: 44px;
+  height: 24px;
+  border-radius: 12px;
+  background: #b8b8b8;
   border: none;
-  padding: 4px 0;
-  display: flex;
-  align-items: center;
-  font-family: var(--font);
-  font-size: 11px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  padding: 0;
   cursor: pointer;
+  transition: background 0.35s ease;
 }
 
-.tt-day,
-.tt-night {
-  transition: color var(--ease);
+[data-theme="dark"] .theme-toggle {
+  background: #3c3c3c;
 }
 
-.tt-sep {
-  margin: 0 6px;
-  color: var(--border);
+.theme-toggle:hover {
+  background: #999;
+}
+
+[data-theme="dark"] .theme-toggle:hover {
+  background: #555;
+}
+
+.tt-thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.22);
+  transition: transform 0.35s var(--ease-out);
   pointer-events: none;
 }
 
-/* light mode: Day is active */
-.tt-day   { color: var(--text); }
-.tt-night { color: var(--muted); }
-
-/* dark mode: Night is active */
-[data-theme="dark"] .tt-day   { color: var(--muted); }
-[data-theme="dark"] .tt-night { color: var(--text); }
-
-.theme-toggle:hover .tt-day,
-.theme-toggle:hover .tt-night { color: var(--text); }
+[data-theme="dark"] .tt-thumb {
+  transform: translateX(20px);
+}
 
 /* ─── NAV DROPDOWN ───────────────────────────────────── */
 .nav-has-sub { position: relative; }
