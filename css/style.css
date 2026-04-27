@@ -715,14 +715,13 @@ body {
 }
 
 .rta-section-label {
-  font-size: 13px;
-  letter-spacing: 0.2em;
+  font-size: 28px;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--text);
   text-align: center;
-  padding: 18px 0;
-  margin-bottom: 28px;
-  border-top: 1px solid var(--border);
+  padding-bottom: 28px;
+  margin-bottom: 56px;
   border-bottom: 1px solid var(--border);
 }
 
