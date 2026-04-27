@@ -363,3 +363,34 @@ document.querySelectorAll('.toolkit-logos img').forEach(img => {
   img.addEventListener('contextmenu', e => e.preventDefault());
   img.addEventListener('dragstart',   e => e.preventDefault());
 });
+
+/* ─────────────────────────────────────────────────────────
+   CUSTOM SCROLL INDICATOR
+───────────────────────────────────────────────────────── */
+(function () {
+  const bar   = document.createElement('div');
+  bar.className = 'scroll-bar';
+  const thumb = document.createElement('div');
+  thumb.className = 'scroll-thumb';
+  bar.appendChild(thumb);
+  document.body.appendChild(bar);
+
+  function update() {
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    if (maxScroll <= 0) { thumb.style.display = 'none'; return; }
+    thumb.style.display = '';
+    const ratio      = window.scrollY / maxScroll;
+    const thumbH     = Math.max(48, (window.innerHeight / document.documentElement.scrollHeight) * window.innerHeight);
+    thumb.style.height = thumbH + 'px';
+    thumb.style.top    = (ratio * (window.innerHeight - thumbH)) + 'px';
+  }
+
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+
+  document.addEventListener('mousemove', e => {
+    bar.classList.toggle('hovered', e.clientX > window.innerWidth - 40);
+  });
+  document.addEventListener('mouseleave', () => bar.classList.remove('hovered'));
+})();

@@ -29,11 +29,50 @@ button { cursor: pointer; background: none; border: none; font: inherit; }
   --header-bg:  rgba(12,12,12,0.88);
 }
 
-/* ─── CUSTOM SCROLLBAR ───────────────────────────────── */
-::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
-::-webkit-scrollbar-thumb:hover { background: var(--muted); }
+/* ─── HIDE NATIVE SCROLLBAR ──────────────────────────── */
+html { scrollbar-width: none; }
+::-webkit-scrollbar { display: none; }
+
+/* ─── CUSTOM SCROLL INDICATOR ───────────────────────── */
+.scroll-bar {
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 20px;
+  z-index: 500;
+  pointer-events: auto;
+}
+
+.scroll-bar::before {
+  content: '';
+  position: absolute;
+  right: 4px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--border);
+  transition: opacity 0.3s ease;
+}
+
+.scroll-thumb {
+  position: absolute;
+  right: 3px;
+  width: 2px;
+  min-height: 40px;
+  background: var(--muted);
+  border-radius: 1px;
+  opacity: 0.35;
+  pointer-events: none;
+  transition: opacity 0.3s ease, width 0.25s ease, right 0.25s ease, background 0.25s ease;
+}
+
+.scroll-bar.hovered .scroll-thumb {
+  opacity: 1;
+  width: 3px;
+  right: 2px;
+  background: var(--text);
+}
 
 /* ─── CURSOR ─────────────────────────────────────────── */
 .c-dot, .c-ring {
@@ -256,6 +295,59 @@ body {
 .nav-sub li a.sub-active {
   color: var(--text);
   background: var(--border);
+}
+
+/* ─── HERO ───────────────────────────────────────────── */
+.hero-section {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  overflow: hidden;
+  background: #111;
+  margin-bottom: var(--gap);
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 1.4s var(--ease-out);
+}
+
+.hero-section:hover .hero-img {
+  transform: scale(1.04);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.18);
+  pointer-events: none;
+}
+
+.hero-name {
+  font-size: clamp(28px, 4.5vw, 76px);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.92);
+  font-weight: normal;
+  text-align: center;
+  line-height: 1;
+}
+
+.hero-sub {
+  font-size: clamp(9px, 0.95vw, 13px);
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.62);
+  font-weight: normal;
+  text-align: center;
+  margin-top: 16px;
 }
 
 /* ─── FILTER BAR ─────────────────────────────────────── */
@@ -1176,4 +1268,5 @@ input[type="file"] { display: none; }
 
 @media (max-width: 480px) {
   .gallery { grid-template-columns: 1fr; }
+  .hero-section { aspect-ratio: 4 / 3; }
 }
