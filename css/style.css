@@ -128,14 +128,14 @@ body {
   display: flex;
   align-items: center;
   height: 100%;
-  padding: 0 68px 0 32px;
+  padding: 0 24px 0 20px;
   max-width: 1800px;
   margin: 0 auto;
 }
 
 .nav-logo {
-  font-size: 13px;
-  letter-spacing: 0.16em;
+  font-size: 15px;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   white-space: nowrap;
   color: var(--text);
@@ -185,11 +185,8 @@ body {
 
 /* ─── THEME TOGGLE ───────────────────────────────────── */
 .theme-toggle {
-  position: absolute;
-  right: 16px;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 101;
+  margin-left: 20px;
+  flex-shrink: 0;
   width: 34px;
   height: 34px;
   border-radius: 50%;
@@ -696,7 +693,7 @@ body {
   transition: filter 0.5s ease;
 }
 
-.map-frame:hover iframe { filter: grayscale(0.6) opacity(0.9); }
+.map-frame:hover iframe { filter: grayscale(0) opacity(1); }
 
 .form-row {
   display: flex;
@@ -734,7 +731,7 @@ body {
   border-color: var(--text);
 }
 
-.form-row textarea { min-height: 120px; }
+.form-row textarea { min-height: 120px; resize: vertical; }
 
 /* file upload row */
 input[type="file"] { display: none; }
@@ -1120,7 +1117,7 @@ input[type="file"] { display: none; }
 }
 
 @media (max-width: 768px) {
-  .nav { padding: 0 20px; }
+  .nav { padding: 0 16px 0 16px; }
 
   .nav-links {
     display: none;
@@ -1137,7 +1134,7 @@ input[type="file"] { display: none; }
 
   .nav-links.open { display: flex; }
   .nav-links a     { font-size: 16px; letter-spacing: 0.1em; }
-  .nav-toggle      { display: block; margin-left: auto; margin-right: 56px; }
+  .nav-toggle      { display: block; margin-left: auto; margin-right: 12px; }
 
   .gallery         { grid-template-columns: repeat(2, 1fr); }
   .cards           { grid-template-columns: 1fr; }
