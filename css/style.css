@@ -938,6 +938,51 @@ body {
 
 .rta-lb-close:hover { color: #fff; }
 
+/* ─── TOOLKIT ────────────────────────────────────────── */
+.toolkit-strip {
+  margin-top: 48px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border);
+}
+
+.toolkit-label {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 28px;
+}
+
+.toolkit-logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  align-items: center;
+}
+
+.toolkit-logos img {
+  height: 38px;
+  width: auto;
+  max-width: 76px;
+  object-fit: contain;
+  filter: grayscale(1);
+  mix-blend-mode: multiply;
+  opacity: 0.72;
+  transition: opacity var(--ease);
+  display: block;
+}
+
+[data-theme="dark"] .toolkit-logos img {
+  filter: grayscale(1) invert(1);
+  mix-blend-mode: screen;
+  opacity: 0.65;
+}
+
+.toolkit-logos img:hover {
+  opacity: 1;
+}
+
 /* ─── SERVICES ───────────────────────────────────────── */
 .svc-hero {
   padding-bottom: 80px;
