@@ -360,3 +360,8 @@ if ('IntersectionObserver' in window) {
    INIT
 ───────────────────────────────────────────────────────── */
 buildGallery();
+
+document.querySelectorAll('.toolkit-logos img').forEach(img => {
+  img.addEventListener('contextmenu', e => e.preventDefault());
+  img.addEventListener('dragstart',   e => e.preventDefault());
+});

@@ -945,14 +945,6 @@ body {
   border-top: 1px solid var(--border);
 }
 
-.toolkit-label {
-  display: block;
-  font-size: 10px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 28px;
-}
 
 .toolkit-logos {
   display: flex;
