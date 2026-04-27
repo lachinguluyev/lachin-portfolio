@@ -73,9 +73,8 @@ body {
 .nav {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   height: 100%;
-  padding: 0 32px;
+  padding: 0 20px 0 32px;
   max-width: 1800px;
   margin: 0 auto;
 }
@@ -90,6 +89,8 @@ body {
 .nav-links {
   display: flex;
   gap: 36px;
+  flex: 1;
+  justify-content: center;
 }
 
 .nav-links a {
@@ -150,7 +151,7 @@ body {
 .nav-sub li a:hover,
 .nav-sub li a.sub-active {
   color: var(--text);
-  background: #f8f8f8;
+  background: var(--border);
 }
 
 /* ─── FILTER BAR ─────────────────────────────────────── */
@@ -411,6 +412,10 @@ body {
   line-height: 1.85;
   color: var(--text);
   margin-bottom: 20px;
+}
+
+.about-text p:last-child {
+  margin-bottom: 0;
 }
 
 .about-text p strong {
@@ -832,11 +837,12 @@ body {
     justify-content: center;
     gap: 28px;
     z-index: 99;
+    flex: none;
   }
 
   .nav-links.open { display: flex; }
   .nav-links a { font-size: 18px; }
-  .nav-toggle { display: block; }
+  .nav-toggle { display: block; margin-left: auto; }
 
   .gallery { grid-template-columns: repeat(2, 1fr); }
   .cards   { grid-template-columns: 1fr; }
