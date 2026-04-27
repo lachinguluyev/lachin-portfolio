@@ -517,11 +517,11 @@ body {
 }
 
 .about-hero-name {
-  font-size: clamp(52px, 9vw, 124px);
+  font-size: clamp(16px, 2vw, 26px);
   font-weight: normal;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  line-height: 0.88;
+  line-height: 1.4;
   color: var(--text);
 }
 
@@ -1160,7 +1160,7 @@ input[type="file"] { display: none; }
 
   .about-grid      { grid-template-columns: 1fr; gap: 40px; }
   .about-img-col   { position: static; }
-  .about-hero-name { font-size: clamp(40px, 14vw, 72px); }
+  .about-hero-name { font-size: clamp(14px, 4.5vw, 22px); }
   .award-entry     { grid-template-columns: 1fr; gap: 20px; padding: 24px 0; }
   .contact-layout  { grid-template-columns: 1fr; gap: 48px; }
   .rta-row         { grid-template-columns: 1fr; }
