@@ -137,7 +137,6 @@ function buildGallery() {
       div.addEventListener('mouseleave', () => { vid.pause(); vid.currentTime = 0; });
     }
 
-    div.addEventListener('click', () => openPanel(originalIndex, visible.map(v => galleryItems.indexOf(v))));
     galleryEl.appendChild(div);
   });
 }

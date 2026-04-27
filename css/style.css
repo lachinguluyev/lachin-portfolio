@@ -26,6 +26,11 @@ button { cursor: pointer; background: none; border: none; font: inherit; }
 
 /* ─── THEME TOGGLE ───────────────────────────────────── */
 .theme-toggle {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 101;
   width: 36px;
   height: 36px;
   border-radius: 50%;
@@ -41,7 +46,6 @@ button { cursor: pointer; background: none; border: none; font: inherit; }
   text-transform: uppercase;
   cursor: pointer;
   transition: border-color var(--ease), background var(--ease);
-  flex-shrink: 0;
 }
 
 .theme-toggle:hover {
@@ -74,7 +78,7 @@ body {
   display: flex;
   align-items: center;
   height: 100%;
-  padding: 0 20px 0 32px;
+  padding: 0 68px 0 32px;
   max-width: 1800px;
   margin: 0 auto;
 }
@@ -89,8 +93,7 @@ body {
 .nav-links {
   display: flex;
   gap: 36px;
-  flex: 1;
-  justify-content: center;
+  margin-left: auto;
 }
 
 .nav-links a {
@@ -207,7 +210,7 @@ body {
   aspect-ratio: 4 / 5;
   position: relative;
   overflow: hidden;
-  cursor: pointer;
+  cursor: default;
   background: #111;
 }
 
@@ -229,30 +232,17 @@ body {
 .g-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0);
+  background: linear-gradient(to top, rgba(0,0,0,0.52) 0%, transparent 44%);
   display: flex;
   align-items: flex-end;
-  padding: 20px;
-  transition: background var(--ease);
-}
-
-.g-item:hover .g-overlay {
-  background: rgba(0, 0, 0, 0.35);
+  padding: 14px 16px;
 }
 
 .g-title {
-  color: #fff;
-  font-size: 12px;
-  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.88);
+  font-size: 11px;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  opacity: 0;
-  transform: translateY(6px);
-  transition: opacity var(--ease), transform var(--ease);
-}
-
-.g-item:hover .g-title {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 /* video badge */
@@ -837,12 +827,11 @@ body {
     justify-content: center;
     gap: 28px;
     z-index: 99;
-    flex: none;
   }
 
   .nav-links.open { display: flex; }
   .nav-links a { font-size: 18px; }
-  .nav-toggle { display: block; margin-left: auto; }
+  .nav-toggle { display: block; margin-left: auto; margin-right: 56px; }
 
   .gallery { grid-template-columns: repeat(2, 1fr); }
   .cards   { grid-template-columns: 1fr; }
