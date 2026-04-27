@@ -49,7 +49,7 @@ button { cursor: pointer; background: none; border: none; font: inherit; }
 }
 
 /* ─── BASE ───────────────────────────────────────────── */
-html { font-size: 14px; scroll-behavior: smooth; }
+html { font-size: 16px; scroll-behavior: smooth; }
 
 body {
   font-family: var(--font);
@@ -81,7 +81,7 @@ body {
 }
 
 .nav-logo {
-  font-size: 13px;
+  font-size: 14px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   white-space: nowrap;
@@ -93,7 +93,7 @@ body {
 }
 
 .nav-links a {
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--muted);
@@ -341,7 +341,7 @@ body {
 }
 
 .page-heading {
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--muted);
@@ -373,14 +373,14 @@ body {
 .card:hover .card-thumb { opacity: 0.85; }
 
 .card-title {
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   margin-bottom: 6px;
 }
 
 .card-desc {
-  font-size: 12px;
+  font-size: 14px;
   color: var(--muted);
   line-height: 1.7;
 }
@@ -407,10 +407,10 @@ body {
 }
 
 .about-text p {
-  font-size: 14px;
-  line-height: 1.9;
-  color: var(--muted);
-  margin-bottom: 18px;
+  font-size: 16px;
+  line-height: 1.85;
+  color: var(--text);
+  margin-bottom: 20px;
 }
 
 .about-text p strong {
@@ -425,7 +425,7 @@ body {
 }
 
 .awards-heading {
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--muted);
@@ -489,8 +489,8 @@ body {
 }
 
 .award-entry-text p {
-  font-size: 14px;
-  line-height: 1.75;
+  font-size: 16px;
+  line-height: 1.8;
   color: var(--text);
   margin: 0;
 }
@@ -504,7 +504,7 @@ body {
 }
 
 .contact-col-label {
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--muted);
@@ -519,7 +519,7 @@ body {
 
 .map-tab {
   font-family: var(--font);
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--muted);
@@ -569,7 +569,7 @@ body {
 }
 
 .form-row label {
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--muted);
@@ -578,7 +578,7 @@ body {
 .form-row input,
 .form-row textarea {
   font-family: var(--font);
-  font-size: 14px;
+  font-size: 16px;
   border: 1px solid var(--border);
   padding: 12px 14px;
   background: transparent;
@@ -601,7 +601,7 @@ body {
   background: var(--text);
   color: var(--bg);
   font-family: var(--font);
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   transition: opacity var(--ease);
@@ -627,7 +627,7 @@ body {
 }
 
 .footer-copy {
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: 0.08em;
   color: var(--muted);
 }
@@ -638,7 +638,7 @@ body {
 }
 
 .footer-social a {
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--muted);
@@ -698,7 +698,7 @@ body {
 }
 
 .rta-section-label {
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--muted);
