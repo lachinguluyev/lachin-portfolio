@@ -962,21 +962,20 @@ body {
 }
 
 .toolkit-logos img {
-  height: 38px;
+  height: 44px;
   width: auto;
-  max-width: 76px;
+  max-width: 88px;
   object-fit: contain;
-  filter: grayscale(1);
   mix-blend-mode: multiply;
-  opacity: 0.72;
+  opacity: 0.75;
   transition: opacity var(--ease);
   display: block;
 }
 
 [data-theme="dark"] .toolkit-logos img {
-  filter: grayscale(1) invert(1);
+  filter: invert(1);
   mix-blend-mode: screen;
-  opacity: 0.65;
+  opacity: 0.68;
 }
 
 .toolkit-logos img:hover {
