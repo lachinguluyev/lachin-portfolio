@@ -185,29 +185,41 @@ body {
 
 /* ─── THEME TOGGLE ───────────────────────────────────── */
 .theme-toggle {
-  margin-left: 20px;
+  margin-left: 24px;
   flex-shrink: 0;
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  border: 1px solid var(--border);
   background: transparent;
-  color: var(--muted);
+  border: none;
+  padding: 4px 0;
   display: flex;
   align-items: center;
-  justify-content: center;
   font-family: var(--font);
-  font-size: 9px;
-  letter-spacing: 0.06em;
+  font-size: 11px;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   cursor: pointer;
-  transition: border-color var(--ease), color var(--ease);
 }
 
-.theme-toggle:hover {
-  border-color: var(--text);
-  color: var(--text);
+.tt-day,
+.tt-night {
+  transition: color var(--ease);
 }
+
+.tt-sep {
+  margin: 0 6px;
+  color: var(--border);
+  pointer-events: none;
+}
+
+/* light mode: Day is active */
+.tt-day   { color: var(--text); }
+.tt-night { color: var(--muted); }
+
+/* dark mode: Night is active */
+[data-theme="dark"] .tt-day   { color: var(--muted); }
+[data-theme="dark"] .tt-night { color: var(--text); }
+
+.theme-toggle:hover .tt-day,
+.theme-toggle:hover .tt-night { color: var(--text); }
 
 /* ─── NAV DROPDOWN ───────────────────────────────────── */
 .nav-has-sub { position: relative; }

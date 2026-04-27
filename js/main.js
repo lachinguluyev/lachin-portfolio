@@ -300,7 +300,6 @@ const themeToggle = document.getElementById('themeToggle');
 const savedTheme  = localStorage.getItem('theme') || 'light';
 
 document.documentElement.setAttribute('data-theme', savedTheme);
-if (themeToggle) themeToggle.textContent = savedTheme === 'dark' ? 'on' : 'off';
 
 if (themeToggle) {
   themeToggle.addEventListener('click', () => {
@@ -308,7 +307,6 @@ if (themeToggle) {
     const next    = current === 'dark' ? 'light' : 'dark';
     document.documentElement.setAttribute('data-theme', next);
     localStorage.setItem('theme', next);
-    themeToggle.textContent = next === 'dark' ? 'on' : 'off';
   });
 }
 
