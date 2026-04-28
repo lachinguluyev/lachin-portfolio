@@ -616,10 +616,15 @@ body {
 
 .about-main {
   display: grid;
-  grid-template-columns: 200px 1fr;
+  grid-template-columns: 300px 1fr;
   gap: 64px;
   align-items: start;
   margin-bottom: 72px;
+}
+
+.about-photo-wrap {
+  position: relative;
+  overflow: hidden;
 }
 
 .about-photo {
@@ -630,43 +635,29 @@ body {
   display: block;
 }
 
-.about-sidebar {
-  margin-top: 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  padding-top: 20px;
-  border-top: 1px solid var(--border);
-}
-
-.about-sidebar-item {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.about-sidebar-label {
-  font-size: 9px;
-  letter-spacing: 0.2em;
+.about-photo-top,
+.about-photo-bottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  color: #fff;
+  font-size: 11px;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--muted);
+  padding: 18px 16px;
+  z-index: 2;
+  font-family: var(--font);
 }
 
-.about-sidebar-val {
-  font-size: 12px;
-  letter-spacing: 0.04em;
-  color: var(--text);
-  line-height: 1.65;
+.about-photo-top {
+  top: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, transparent 100%);
 }
 
-.about-pull {
-  font-size: clamp(14px, 1.4vw, 17px);
-  line-height: 1.65;
-  color: var(--text);
-  border-left: 2px solid var(--text);
-  padding-left: 16px;
-  margin-bottom: 32px;
-  max-width: 560px;
+.about-photo-bottom {
+  bottom: 0;
+  text-align: right;
+  background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 100%);
 }
 
 .about-body p {
