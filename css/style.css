@@ -789,18 +789,47 @@ body {
   margin-bottom: 24px;
 }
 
-.contact-address-block {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 40px;
+.contact-location-block {
+  margin-bottom: 36px;
 }
 
-.contact-address-block p {
+.contact-location-city {
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+
+.contact-location-street {
   font-size: 13px;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
   color: var(--muted);
-  line-height: 1.65;
+  margin-bottom: 8px;
+  line-height: 1.55;
+}
+
+.contact-location-detail {
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  margin-bottom: 6px;
+  line-height: 1.55;
+}
+
+.contact-location-divider {
+  width: 28px;
+  height: 1px;
+  background: var(--border);
+  margin-bottom: 36px;
+}
+
+.contact-modes {
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 14px;
 }
 
 .contact-socials {
