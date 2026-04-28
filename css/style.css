@@ -1217,7 +1217,7 @@ input[type="file"] { display: none; }
 .svc-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  min-height: calc(100vh - var(--nav-h));
+  align-items: center;
   border-bottom: 1px solid var(--border);
 }
 
@@ -1225,13 +1225,13 @@ input[type="file"] { display: none; }
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 80px 72px;
+  padding: 52px 56px;
 }
 
 .svc-row-media {
-  position: relative;
   overflow: hidden;
   background: #111;
+  aspect-ratio: 16 / 9;
 }
 
 .svc-row-media video {
@@ -1246,25 +1246,25 @@ input[type="file"] { display: none; }
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--muted);
-  margin-bottom: 32px;
+  margin-bottom: 18px;
 }
 
 .svc-row-title {
-  font-size: clamp(32px, 4vw, 62px);
+  font-size: clamp(20px, 2.6vw, 42px);
   font-weight: normal;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   line-height: 1.1;
   color: var(--text);
-  margin-bottom: 40px;
+  margin-bottom: 24px;
 }
 
 .svc-row-desc {
-  font-size: 16px;
-  line-height: 1.9;
+  font-size: 14px;
+  line-height: 1.85;
   color: var(--text);
   opacity: 0.72;
-  max-width: 460px;
+  max-width: 420px;
 }
 
 /* ─── RESPONSIVE ─────────────────────────────────────── */
@@ -1308,9 +1308,8 @@ input[type="file"] { display: none; }
   .about-hero   { padding-bottom: 56px; margin-bottom: 56px; }
   .awards-section { margin-top: 72px; padding-top: 48px; }
 
-  .svc-row       { grid-template-columns: 1fr; min-height: auto; }
-  .svc-row-media { aspect-ratio: 4 / 3; }
-  .svc-row-text  { padding: 48px 20px; }
+  .svc-row       { grid-template-columns: 1fr; }
+  .svc-row-text  { padding: 36px 20px; }
 
   .footer          { padding: 20px 16px; }
   .footer-inner    { flex-direction: column; gap: 14px; text-align: center; }
