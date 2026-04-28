@@ -743,6 +743,37 @@ body {
 }
 
 /* ─── CONTACT ────────────────────────────────────────── */
+
+/* Full-width maps row */
+.contact-maps {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap);
+  padding-top: var(--nav-h);
+}
+
+.contact-map-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-map-item .map-frame {
+  aspect-ratio: 16 / 9;
+}
+
+.contact-map-label {
+  position: absolute;
+  bottom: 20px;
+  left: 24px;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.82);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Info + Form section */
 .contact-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -758,31 +789,40 @@ body {
   margin-bottom: 24px;
 }
 
-.map-tabs {
+.contact-address-block {
   display: flex;
-  border-bottom: 1px solid var(--border);
-  margin-bottom: 0;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 40px;
 }
 
-.map-tab {
-  font-family: var(--font);
-  font-size: 10px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--text);
-  padding: 13px 18px;
-  background: none;
-  border: none;
-  border-bottom: 1.5px solid transparent;
-  cursor: pointer;
+.contact-address-block p {
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.contact-socials {
+  display: flex;
+  gap: 10px;
+}
+
+.contact-socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  color: var(--muted);
   transition: color var(--ease), border-color var(--ease);
 }
 
-.map-tab:hover { color: var(--text); }
-
-.map-tab.active {
+.contact-socials a:hover {
   color: var(--text);
-  border-bottom-color: var(--text);
+  border-color: var(--text);
 }
 
 .map-frame {
@@ -1249,6 +1289,7 @@ input[type="file"] { display: none; }
   .about-grid      { grid-template-columns: 1fr; gap: 40px; }
   .about-hero-name { font-size: clamp(14px, 4.5vw, 22px); }
   .award-entry     { grid-template-columns: 1fr; gap: 20px; padding: 24px 0; }
+  .contact-maps    { grid-template-columns: 1fr; }
   .contact-layout  { grid-template-columns: 1fr; gap: 48px; }
   .rta-row         { grid-template-columns: 1fr; }
   .rta-tours-row   { grid-template-columns: 1fr; }
