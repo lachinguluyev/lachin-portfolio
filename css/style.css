@@ -1214,11 +1214,19 @@ input[type="file"] { display: none; }
 }
 
 /* ─── SERVICES ───────────────────────────────────────── */
+.svc-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: #0a0a0a;
+  padding: 14px 0;
+}
+
 .svc-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  border-bottom: 1px solid var(--border);
+  background: var(--bg);
 }
 
 .svc-row-text {
