@@ -46,8 +46,7 @@ if (worksNavBtn && worksSubMenu) {
       worksSubMenu.querySelectorAll('a').forEach(x => x.classList.remove('sub-active'));
       a.classList.add('sub-active');
       worksNavItem.classList.remove('sub-open');
-      if (navLinks) { navLinks.classList.remove('open'); }
-      if (toggleTxt) { toggleTxt.textContent = 'Menu'; }
+      closeMobileNav();
       buildWorks();
     });
   });
@@ -65,11 +64,21 @@ if (worksNavBtn && worksSubMenu) {
 const navToggle = document.querySelector('.nav-toggle');
 const navLinks  = document.querySelector('.nav-links');
 const toggleTxt = navToggle?.querySelector('.toggle-text');
+const headerEl  = document.querySelector('.header');
+
+function closeMobileNav() {
+  navLinks.classList.remove('open');
+  if (headerEl) headerEl.classList.remove('nav-open');
+  if (toggleTxt) toggleTxt.textContent = 'Menu';
+  document.body.style.overflow = '';
+}
 
 if (navToggle) {
   navToggle.addEventListener('click', () => {
     const open = navLinks.classList.toggle('open');
+    if (headerEl) headerEl.classList.toggle('nav-open', open);
     if (toggleTxt) toggleTxt.textContent = open ? 'Close' : 'Menu';
+    document.body.style.overflow = open ? 'hidden' : '';
   });
 }
 

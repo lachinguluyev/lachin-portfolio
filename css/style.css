@@ -1415,30 +1415,47 @@ input[type="file"] { display: none; }
 }
 
 @media (max-width: 768px) {
-  .nav { padding: 0 16px 0 16px; }
+  .nav { padding: 0 16px; }
+  .nav-toggle { display: block; margin-left: auto; margin-right: 0; }
 
-  /* header sits above the mobile overlay so Menu/Close button stays visible */
-  .header { z-index: 201; }
+  /* ── Mobile nav overlay: expand the header itself to full screen ──
+     Using position:absolute (not fixed) to avoid iOS Safari backdrop-filter bug */
+  .header.nav-open {
+    height: 100vh;
+    height: 100svh;
+    background: #000;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-bottom: none;
+  }
 
+  .header.nav-open .nav { height: 100%; position: relative; }
+  .header.nav-open .nav-logo { color: rgba(255,255,255,0.75); }
+  .header.nav-open .theme-toggle { display: none; }
+
+  /* Nav links hidden by default; absolute-fill below logo row when open */
   .nav-links {
     display: none;
-    position: fixed;
-    inset: 0;
-    background: #000;
+    margin-left: 0;
+  }
+
+  .nav-links.open {
+    display: flex;
+    position: absolute;
+    top: var(--nav-h);
+    left: 0;
+    right: 0;
+    bottom: 0;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 36px;
-    z-index: 200;
-    margin-left: 0;
   }
 
-  .nav-links.open { display: flex; }
-  .nav-links a     { font-size: 20px; letter-spacing: 0.12em; color: #fff; }
+  .nav-links a       { font-size: 20px; letter-spacing: 0.12em; color: #fff; }
   .nav-links a::after { display: none; }
-  .nav-toggle      { display: block; margin-left: auto; margin-right: 12px; }
 
-  /* Works sub-menu: expands inline inside the overlay */
+  /* Works sub-menu: expands inline under Works */
   .nav-links .nav-has-sub { display: flex; flex-direction: column; align-items: center; }
   .nav-links .nav-sub {
     position: static;
@@ -1461,10 +1478,7 @@ input[type="file"] { display: none; }
     background: transparent;
   }
   .nav-links .nav-sub li a:hover,
-  .nav-links .nav-sub li a.sub-active {
-    color: #fff;
-    background: transparent;
-  }
+  .nav-links .nav-sub li a.sub-active { color: #fff; background: transparent; }
 
   .works-grid      { grid-template-columns: repeat(2, 1fr); }
   .cards           { grid-template-columns: 1fr; }
