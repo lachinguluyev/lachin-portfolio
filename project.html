@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LACHIN GULUYEV</title>
+  <title>Project — LACHIN GULUYEV</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap" rel="stylesheet" />
@@ -18,15 +18,7 @@
         <span class="toggle-text">Menu</span>
       </button>
       <ul class="nav-links">
-        <li class="nav-has-sub" id="worksNavItem">
-          <a href="index.html" class="active" id="worksNavBtn">Works</a>
-          <ul class="nav-sub" id="worksSubMenu">
-            <li><a href="#" class="sub-active" data-filter="all">All</a></li>
-            <li><a href="#" data-filter="interiors">Interiors</a></li>
-            <li><a href="#" data-filter="facade">Facade</a></li>
-            <li><a href="#" data-filter="products">Products</a></li>
-          </ul>
-        </li>
+        <li><a href="index.html">Works</a></li>
         <li><a href="real-time-app.html">Real-Time Interactive</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="about.html">About</a></li>
@@ -37,7 +29,24 @@
   </header>
 
   <main class="main">
-    <div class="works-grid" id="worksGrid"></div>
+    <div class="project-wrap">
+
+      <a href="index.html" class="project-back">&#8592; Works</a>
+
+      <h1 class="project-title"></h1>
+
+      <div class="project-hero">
+        <img src="" alt="" />
+      </div>
+
+      <div class="project-body">
+        <div class="project-meta"></div>
+        <div class="project-desc"></div>
+      </div>
+
+      <div class="project-photos"></div>
+
+    </div>
   </main>
 
   <footer class="footer">
@@ -52,7 +61,16 @@
     </div>
   </footer>
 
+  <!-- Lightbox -->
+  <div class="lightbox" id="projectLb" aria-hidden="true">
+    <button class="lb-prev"  id="projectLbPrev"  aria-label="Previous">&#8249;</button>
+    <div class="lb-media"><img id="projectLbImg" src="" alt="" /></div>
+    <button class="lb-next"  id="projectLbNext"  aria-label="Next">&#8250;</button>
+    <button class="lb-close" id="projectLbClose" aria-label="Close">&#x2715;</button>
+  </div>
+
   <script src="js/projects.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/project.js"></script>
 </body>
 </html>
