@@ -1476,7 +1476,7 @@ input[type="file"] { display: none; }
     border-bottom: none;
   }
 
-  .header.nav-open .nav { height: 100%; position: relative; }
+  .header.nav-open .nav { height: var(--nav-h); }
   .header.nav-open .nav-logo   { color: rgba(255,255,255,0.75); }
   .header.nav-open .nav-toggle { color: rgba(255,255,255,0.75); }
   .header.nav-open .theme-toggle { display: none; }
