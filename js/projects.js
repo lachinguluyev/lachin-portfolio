@@ -94,6 +94,27 @@ const projects = [
     description: 'The Knightsbridge project is one of the most luxurious residential buildings located in the White City area of Baku. The client\'s apartment has an area of 70 square meters. The client wanted a simple and modern design from us.\n\nWe created a clean and modern interior, but at the same time, we wanted it to be different from other simple modern projects. The design and overall atmosphere of the apartment impressed me a lot. One of the most important features is that all the windows are floor-to-ceiling and open to a beautiful view. The apartment also receives a lot of natural light, which is very important.\n\nThe design and 3D visualization of this project belong to Lachin Guluyev.',
   },
   {
+    id: 'santafe-2025',
+    title: 'Hyundai Santa Fe 2025 CGI',
+    cover: 'assets/images/Hyundai SantaFe/SANTA-FE-fon.jpg',
+    noHero: true,
+    sideVideo: 'assets/videos/Santafe-animation.webm',
+    images: [
+      'assets/images/Hyundai SantaFe/SANTA-FE.jpg',
+      'assets/images/Hyundai SantaFe/SANTA-FE-1.jpg',
+      'assets/images/Hyundai SantaFe/SANTA-FE-2.jpg',
+      'assets/images/Hyundai SantaFe/SANTA-FE-3.jpg',
+      'assets/images/Hyundai SantaFe/SANTA-FE-4.jpg',
+    ],
+    category: 'products',
+    meta: [
+      { label: 'Visualization', value: 'Lachin Guluyev' },
+      { label: 'Year',          value: '2025' },
+      { label: 'Software',      value: '3ds Max, Corona Renderer, Photoshop' },
+    ],
+    description: 'The fifth-generation Santa Fe was announced by Hyundai on 17 July 2023, followed by a full unveiling on 10 August 2023. The 2024 Hyundai Santa Fe is a bold reinvention of the popular midsize SUV, combining rugged capability with refined comfort.\n\nWith its boxier silhouette and extended wheelbase, it offers a more adventurous and spacious experience for modern families. Inside, the Santa Fe features a minimalist yet premium cabin, focused on usability and tech integration. From its wide digital displays to its panoramic sunroof, every detail enhances both driver and passenger comfort.\n\nDesigned to handle both urban roads and off-road trails, the Santa Fe balances versatility with style. Its hybrid powertrain option ensures greater fuel efficiency without compromising performance. A true midsize SUV, the 2024 Santa Fe is built for those who demand both function and flair.\n\nDeveloped under the codename MX5, Hyundai designed the vehicle to appeal to the growing outdoor lifestyle globally by adopting a boxy design. Available powertrain options include a 2.5-litre petrol, 2.5-litre turbocharged petrol, 1.6-litre turbocharged hybrid and 1.6-litre turbocharged plug-in hybrid.',
+  },
+  {
     id: 'interactive-application',
     title: 'Interactive Application',
     cover: 'assets/images/Interactive App/Digital-Twin-Presentation.jpg',

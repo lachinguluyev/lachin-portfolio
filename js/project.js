@@ -13,8 +13,14 @@
   if (titleEl) titleEl.textContent = project.title;
 
   /* hero */
+  const heroEl  = document.querySelector('.project-hero');
   const heroImg = document.querySelector('.project-hero img');
-  if (heroImg) { heroImg.src = project.hero || project.cover; heroImg.alt = project.title; }
+  if (project.noHero) {
+    if (heroEl) heroEl.style.display = 'none';
+  } else if (heroImg) {
+    heroImg.src = project.hero || project.cover;
+    heroImg.alt = project.title;
+  }
 
   /* meta */
   const metaEl = document.querySelector('.project-meta');
@@ -31,6 +37,21 @@
   const descEl = document.querySelector('.project-desc');
   if (descEl && project.description) {
     descEl.innerHTML = project.description.split('\n\n').map(p => `<p>${p.replace(/\n/g, '<br>')}</p>`).join('');
+  }
+
+  /* side video layout — wraps project-body and places video beside it */
+  if (project.sideVideo) {
+    const bodyEl = document.querySelector('.project-body');
+    if (bodyEl) {
+      const wrap = document.createElement('div');
+      wrap.className = 'project-text-media';
+      bodyEl.parentNode.insertBefore(wrap, bodyEl);
+      wrap.appendChild(bodyEl);
+      const mediaEl = document.createElement('div');
+      mediaEl.className = 'project-side-media';
+      mediaEl.innerHTML = `<video src="${project.sideVideo}" class="project-webp-anim" autoplay loop muted playsinline></video>`;
+      wrap.appendChild(mediaEl);
+    }
   }
 
   /* youtube embed */
