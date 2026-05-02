@@ -3,6 +3,12 @@
 ───────────────────────────────────────────────────────── */
 let activeWorksFilter = 'all';
 
+// When navigating from another page via index.html?filter=X, pick it up immediately
+(function () {
+  const p = new URLSearchParams(window.location.search).get('filter');
+  if (p) activeWorksFilter = p;
+})();
+
 function buildWorks() {
   const grid = document.getElementById('worksGrid');
   if (!grid || typeof projects === 'undefined') return;
@@ -39,15 +45,27 @@ if (worksNavBtn && worksSubMenu) {
     worksNavItem.classList.toggle('sub-open');
   });
 
+  // Sync active link on load (covers index?filter=X arrival)
+  const _initLink = worksSubMenu.querySelector(`a[data-filter="${activeWorksFilter}"]`);
+  if (_initLink) {
+    worksSubMenu.querySelectorAll('a').forEach(x => x.classList.remove('sub-active'));
+    _initLink.classList.add('sub-active');
+  }
+
   worksSubMenu.querySelectorAll('a[data-filter]').forEach(a => {
     a.addEventListener('click', e => {
-      e.preventDefault();
-      activeWorksFilter = a.dataset.filter;
-      worksSubMenu.querySelectorAll('a').forEach(x => x.classList.remove('sub-active'));
-      a.classList.add('sub-active');
-      worksNavItem.classList.remove('sub-open');
-      closeMobileNav();
-      buildWorks();
+      const grid = document.getElementById('worksGrid');
+      if (grid) {
+        // On index page: filter in place
+        e.preventDefault();
+        activeWorksFilter = a.dataset.filter;
+        worksSubMenu.querySelectorAll('a').forEach(x => x.classList.remove('sub-active'));
+        a.classList.add('sub-active');
+        worksNavItem.classList.remove('sub-open');
+        closeMobileNav();
+        buildWorks();
+      }
+      // On other pages: navigate via href (e.g. index.html?filter=interiors)
     });
   });
 

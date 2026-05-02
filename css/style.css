@@ -1477,7 +1477,8 @@ input[type="file"] { display: none; }
   }
 
   .header.nav-open .nav { height: 100%; position: relative; }
-  .header.nav-open .nav-logo { color: rgba(255,255,255,0.75); }
+  .header.nav-open .nav-logo   { color: rgba(255,255,255,0.75); }
+  .header.nav-open .nav-toggle { color: rgba(255,255,255,0.75); }
   .header.nav-open .theme-toggle { display: none; }
 
   /* Nav links hidden by default; absolute-fill below logo row when open */
@@ -1497,6 +1498,8 @@ input[type="file"] { display: none; }
     align-items: center;
     justify-content: center;
     gap: 36px;
+    overflow-y: auto;
+    padding: 32px 0;
   }
 
   .nav-links a       { font-size: 20px; letter-spacing: 0.12em; color: #fff; }

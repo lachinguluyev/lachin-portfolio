@@ -18,7 +18,17 @@
         <span class="toggle-text">Menu</span>
       </button>
       <ul class="nav-links">
-        <li><a href="index.html">Works</a></li>
+        <li class="nav-has-sub" id="worksNavItem">
+          <a href="index.html" id="worksNavBtn">Works</a>
+          <ul class="nav-sub" id="worksSubMenu">
+            <li><a href="index.html" data-filter="all">All</a></li>
+            <li><a href="index.html?filter=interiors" data-filter="interiors">Interiors</a></li>
+            <li><a href="index.html?filter=facade" data-filter="facade">Facade</a></li>
+            <li><a href="index.html?filter=interactive" data-filter="interactive">Interactive</a></li>
+            <li><a href="index.html?filter=products" data-filter="products">Products</a></li>
+            <li><a href="index.html?filter=construction" data-filter="construction">Construction</a></li>
+          </ul>
+        </li>
         <li><a href="real-time-app.html">Real-Time Interactive</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="about.html" class="active">About</a></li>
