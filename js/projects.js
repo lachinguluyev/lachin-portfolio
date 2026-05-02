@@ -93,4 +93,23 @@ const projects = [
     ],
     description: 'The Knightsbridge project is one of the most luxurious residential buildings located in the White City area of Baku. The client\'s apartment has an area of 70 square meters. The client wanted a simple and modern design from us.\n\nWe created a clean and modern interior, but at the same time, we wanted it to be different from other simple modern projects. The design and overall atmosphere of the apartment impressed me a lot. One of the most important features is that all the windows are floor-to-ceiling and open to a beautiful view. The apartment also receives a lot of natural light, which is very important.\n\nThe design and 3D visualization of this project belong to Lachin Guluyev.',
   },
+  {
+    id: 'interactive-application',
+    title: 'Interactive Application',
+    cover: 'assets/images/Interactive App/Digital-Twin-Presentation.jpg',
+    hero:  'assets/images/Interactive App/Ipad-Interactive.jpg',
+    images: [
+      'assets/images/Interactive App/REALTIME1.jpg',
+      'assets/images/Interactive App/REALTIME2.jpg',
+      'assets/images/Interactive App/REALTIME3.jpg',
+    ],
+    category: 'interactive',
+    meta: [
+      { label: 'Designer & Developer', value: 'Lachin Guluyev' },
+      { label: 'Year',                 value: '2026' },
+      { label: 'Software',             value: 'Unreal Engine, JavaScript, 3ds Max, Corona Renderer, Photoshop' },
+    ],
+    description: 'This is my 3D Interactive Application built in Unreal Engine — designed not just to visualize architecture, but to experience it. 🎮\n\nFrom a single interface, you can:\n🚁 Switch to drone view\n🧍 Walk through the environment as a human\n🏠 Explore interiors\n🧭 Navigate surroundings in real time\n\nThis project simulates a complete living ecosystem:\n🏙️ Smart surroundings & amenities system\n🏠 Fully designed residential buildings & interiors\n🚗 Animated traffic bringing life to the streets\n🧍 MetaHuman walkaround experience\n🚁 Seamless drone ↔ ground view transition\n🌦️ Ultra Dynamic Sky with 4 seasons & time-of-day\n🏫 Schools, playgrounds, sports areas\n⚡ EV charging stations\n🏗️ Active construction zone\n\nThis is not just a render. This is a new way to present architecture — interactive, dynamic, and alive. 🚀\n\n🎯 And this is only the beginning.',
+    youtube: 'https://youtu.be/pf0lx6K9D1w?si=LzozJg0WefVlCCHx',
+  },
 ];

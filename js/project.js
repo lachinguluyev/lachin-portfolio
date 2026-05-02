@@ -30,7 +30,22 @@
   /* description */
   const descEl = document.querySelector('.project-desc');
   if (descEl && project.description) {
-    descEl.innerHTML = project.description.split('\n\n').map(p => `<p>${p}</p>`).join('');
+    descEl.innerHTML = project.description.split('\n\n').map(p => `<p>${p.replace(/\n/g, '<br>')}</p>`).join('');
+  }
+
+  /* youtube embed */
+  const ytEl = document.querySelector('.project-youtube');
+  if (ytEl && project.youtube) {
+    const m = project.youtube.match(/(?:youtu\.be\/|v=)([\w-]{11})/);
+    if (m) {
+      ytEl.innerHTML = `
+        <div class="project-yt-wrap">
+          <iframe src="https://www.youtube.com/embed/${m[1]}"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </div>`;
+    }
   }
 
   /* photo grid — all images including cover */
