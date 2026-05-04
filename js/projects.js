@@ -36,6 +36,25 @@ const projects = [
     description: 'The Riviera project is a residential complex where families can live in comfort and peace. The project includes two large swimming pools and features futuristic landscape design. The design was carried out by the Sea Breeze team, while the architectural design and visualization were done by Lachin Guluyev. Travertine material was used on the facade.\n\nThe complex is located in an area with a beautiful landscape and sea view. It consists of three buildings. Although its current status is "unbuilt," construction is planned in the near future.',
   },
   {
+    id: 'swiss-archviz',
+    title: 'Swiss Archviz',
+    cover: 'assets/images/Swiss Archviz/Camera-1web.jpg',
+    noHero: true,
+    sideVideo: 'assets/videos/Swiss Arcviz.webm',
+    images: [
+      'assets/images/Swiss Archviz/Camera-1web.jpg',
+      'assets/images/Swiss Archviz/Camera-2web.jpg',
+      'assets/images/Swiss Archviz/Camera-3web.jpg',
+    ],
+    category: 'facade',
+    meta: [
+      { label: '3D Visualization', value: 'Lachin Guluyev' },
+      { label: 'Year',             value: '2026' },
+      { label: 'Software',         value: '3ds Max, Corona Renderer, Photoshop, ComfyUI' },
+    ],
+    description: 'Modern Residential Visualization | Exterior Concept in Switzerland\n\nThis project reflects a balance between modern architecture and a calm, livable environment. Clean geometry, soft tones, and natural surroundings were combined to create a space that feels both elegant and comfortable.\n\nMy role in this project focused on bringing the design to life through visual storytelling:\n– 3D Visualization & Rendering\n– Lighting Setup & Atmosphere\n– Material Creation & Detailing\n– Corona Renderer Workflow\n– ComfyUI-assisted visual enhancement\n– Strong focus on realism and composition\n\nThe goal was not just to show a building, but to create a feeling — a place where people can imagine their daily life.\n\nIf you\'re looking to present your projects with high-end visuals that support sales and marketing, feel free to connect.',
+  },
+  {
     id: 'sea-breeze-villa',
     title: 'Sea Breeze Villa',
     cover: 'assets/images/SEA BREEZE VILLA/1-SB-VILLA.jpg',
