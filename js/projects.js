@@ -38,13 +38,13 @@ const projects = [
   {
     id: 'swiss-archviz',
     title: 'Swiss Archviz',
-    cover: 'assets/images/Swiss Archviz/Camera-1web.jpg',
+    cover: 'assets/images/Swiss Archviz/Camera 1.jpg',
     noHero: true,
     sideVideo: 'assets/videos/Swiss Arcviz.webm',
     images: [
-      'assets/images/Swiss Archviz/Camera-1web.jpg',
-      'assets/images/Swiss Archviz/Camera-2web.jpg',
-      'assets/images/Swiss Archviz/Camera-3web.jpg',
+      'assets/images/Swiss Archviz/Camera 1.jpg',
+      'assets/images/Swiss Archviz/Camera 2.jpg',
+      'assets/images/Swiss Archviz/Camera 3.jpg',
     ],
     category: 'facade',
     meta: [
