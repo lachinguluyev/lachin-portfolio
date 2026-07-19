@@ -177,6 +177,26 @@ const projects = [
     description: 'Sumgait | 60 sqm Apartment Design\n\nThis 60 sqm apartment was designed for a young family who recently purchased their new home. Their main request was clear: create a modern living space with maximum functionality, plenty of storage solutions, and a clean aesthetic atmosphere.\n\nIn this project, I focused on soft lighting, bright tones, and custom-designed cabinets to make the apartment feel both spacious and practical. Every area was planned carefully to balance comfort, storage, and visual harmony.\n\nThe interior design and 3D visualization were created by Lachin Guluyev.\n\nI would also like to mention that the real photographs after construction are available on the main page. The images shared here are CGI visualizations, while the "built" section shows the final completed result of the project.\n\nFor me, successful interior design and visualization should always balance three important elements:\n• Aesthetics\n• Functionality\n• Budget-friendly solutions\n\nThis apartment is a good example of how a compact 60 sqm space can still feel elegant, highly functional, and financially practical at the same time.\n\nThank you for watching.',
   },
   {
+    id: 'villa-143',
+    title: 'VILLA 143',
+    cover: 'assets/images/VILLA 143/REAL 1.jpg',
+    images: [
+      'assets/images/VILLA 143/REAL 1.jpg',
+      'assets/images/VILLA 143/RENDER 1.png',
+      'assets/images/VILLA 143/ZAL.jpg',
+      'assets/images/VILLA 143/zal 1.jpg',
+      'assets/images/VILLA 143/metbex.jpg',
+      'assets/images/VILLA 143/metbex 1.jpg',
+    ],
+    category: 'construction',
+    meta: [
+      { label: 'Design & Visualization', value: 'Lachin Guluyev, LACHIN ARCHITECTS' },
+      { label: 'Location',               value: 'Baku, Azerbaijan' },
+      { label: 'Status',                 value: 'Built' },
+    ],
+    description: 'HOUSE 143 — in Baku, Azerbaijan.\n\nRender and Construction Process\n\nWe do not only create renders, but we also make the project real. For this exterior, we used classic architectural elements. Lachin Guluyev and the LACHIN ARCHITECTS team created the design and 3D visualization.\n\nYou can also trust us with the design, renovation, and construction of your villa, apartment, or commercial property.',
+  },
+  {
     id: 'sumgayit-built',
     title: 'Sumgayit Apartment — Built',
     cover: 'assets/images/Sumgayit apartment - Built/3.jpg',
