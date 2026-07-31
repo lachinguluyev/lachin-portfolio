@@ -928,7 +928,7 @@ body {
 /* Full-width maps row */
 .contact-maps {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--gap);
   padding-top: var(--nav-h);
 }
@@ -1460,6 +1460,7 @@ input[type="file"] { display: none; }
 @media (max-width: 1100px) {
   .gallery { grid-template-columns: repeat(2, 1fr); }
   .cards   { grid-template-columns: repeat(2, 1fr); }
+  .contact-maps { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 768px) {
