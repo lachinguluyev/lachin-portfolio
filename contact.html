@@ -15,26 +15,27 @@
     <nav class="nav">
       <a href="index.html" class="nav-logo">LACHIN GULUYEV</a>
       <button class="nav-toggle" aria-label="Toggle menu">
-        <span class="toggle-text">Menu</span>
+        <span class="toggle-text" data-i18n="nav.menu">Menu</span>
       </button>
       <ul class="nav-links">
         <li class="nav-has-sub" id="worksNavItem">
-          <a href="index.html" id="worksNavBtn">Works</a>
+          <a href="index.html" id="worksNavBtn" data-i18n="nav.works">Works</a>
           <ul class="nav-sub" id="worksSubMenu">
-            <li><a href="index.html" data-filter="all">All</a></li>
-            <li><a href="index.html?filter=interiors" data-filter="interiors">Interiors</a></li>
-            <li><a href="index.html?filter=facade" data-filter="facade">Facade</a></li>
-            <li><a href="index.html?filter=interactive" data-filter="interactive">Interactive</a></li>
-            <li><a href="index.html?filter=products" data-filter="products">Products</a></li>
-            <li><a href="index.html?filter=construction" data-filter="construction">Construction</a></li>
+            <li><a href="index.html" data-filter="all" data-i18n="nav.all">All</a></li>
+            <li><a href="index.html?filter=interiors" data-filter="interiors" data-i18n="nav.interiors">Interiors</a></li>
+            <li><a href="index.html?filter=facade" data-filter="facade" data-i18n="nav.facade">Facade</a></li>
+            <li><a href="index.html?filter=interactive" data-filter="interactive" data-i18n="nav.interactive">Interactive</a></li>
+            <li><a href="index.html?filter=products" data-filter="products" data-i18n="nav.products">Products</a></li>
+            <li><a href="index.html?filter=construction" data-filter="construction" data-i18n="nav.construction">Construction</a></li>
           </ul>
         </li>
-        <li><a href="real-time-app.html">Real-Time Interactive</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="real-time-app.html" data-i18n="nav.realtime">Real-Time Interactive</a></li>
+        <li><a href="services.html" data-i18n="nav.services">Services</a></li>
+        <li><a href="about.html" data-i18n="nav.about">About</a></li>
+        <li><a href="contact.html" class="active" data-i18n="nav.contact">Contact</a></li>
       </ul>
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><span class="tt-thumb"></span></button>
+      <button class="lang-btn" id="langBtn" aria-label="Change language">EN</button>
     </nav>
   </header>
 
@@ -48,7 +49,7 @@
             src="https://maps.google.com/maps?q=40.3752367,49.8508027&output=embed&z=17"
             allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
-        <p class="contact-map-label">Azerbaijan, Baku</p>
+        <p class="contact-map-label" data-i18n="contact.map.baku">Azerbaijan, Baku</p>
       </div>
       <div class="contact-map-item">
         <div class="map-frame">
@@ -56,7 +57,7 @@
             src="https://maps.google.com/maps?q=40.5929769,49.6840568&output=embed&z=17"
             allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
-        <p class="contact-map-label">Azerbaijan, Sumqayit</p>
+        <p class="contact-map-label" data-i18n="contact.map.sumqayit">Azerbaijan, Sumqayit</p>
       </div>
       <div class="contact-map-item">
         <div class="map-frame">
@@ -64,7 +65,7 @@
             src="https://maps.google.com/maps?q=48.1888519,11.4669716&output=embed&z=18"
             allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
-        <p class="contact-map-label">Germany, Munich</p>
+        <p class="contact-map-label" data-i18n="contact.map.munich">Germany, Munich</p>
       </div>
     </div>
 
@@ -74,33 +75,33 @@
 
         <!-- LEFT: Info + Socials -->
         <div class="contact-info-col">
-          <p class="contact-col-label">Find us at:</p>
+          <p class="contact-col-label" data-i18n="contact.findus">Find us at:</p>
 
           <div class="contact-location-block">
-            <p class="contact-location-city">Baku, Azerbaijan</p>
-            <p class="contact-location-street">Khagani Street, Nasimi</p>
+            <p class="contact-location-city" data-i18n="contact.city.baku">Baku, Azerbaijan</p>
+            <p class="contact-location-street" data-i18n="contact.street.baku">Khagani Street, Nasimi</p>
             <p class="contact-location-detail">Tel: +994 51 609 60 23</p>
-            <p class="contact-location-detail">Monday – Friday &nbsp;·&nbsp; 09:00 – 18:00</p>
-            <p class="contact-modes">Hybrid &nbsp;·&nbsp; On-site</p>
+            <p class="contact-location-detail" data-i18n="contact.hours">Monday – Friday &nbsp;·&nbsp; 09:00 – 18:00</p>
+            <p class="contact-modes" data-i18n="contact.modes">Hybrid &nbsp;·&nbsp; On-site</p>
           </div>
 
           <div class="contact-location-divider"></div>
 
           <div class="contact-location-block">
-            <p class="contact-location-city">Sumqayit, Azerbaijan</p>
-            <p class="contact-location-street">Bulvar Street 67A, AZ5000</p>
+            <p class="contact-location-city" data-i18n="contact.city.sumqayit">Sumqayit, Azerbaijan</p>
+            <p class="contact-location-street" data-i18n="contact.street.sumqayit">Bulvar Street 67A, AZ5000</p>
             <p class="contact-location-detail">Tel: +994 51 609 60 23</p>
-            <p class="contact-location-detail">Monday – Friday &nbsp;·&nbsp; 09:00 – 18:00</p>
-            <p class="contact-modes">Hybrid &nbsp;·&nbsp; On-site</p>
+            <p class="contact-location-detail" data-i18n="contact.hours">Monday – Friday &nbsp;·&nbsp; 09:00 – 18:00</p>
+            <p class="contact-modes" data-i18n="contact.modes">Hybrid &nbsp;·&nbsp; On-site</p>
           </div>
 
           <div class="contact-location-divider"></div>
 
           <div class="contact-location-block">
-            <p class="contact-location-city">Munich, Germany</p>
-            <p class="contact-location-street">Allach-Untermenzing, 80999 München</p>
-            <p class="contact-location-detail">Monday – Friday &nbsp;·&nbsp; 09:00 – 18:00</p>
-            <p class="contact-modes">Remote</p>
+            <p class="contact-location-city" data-i18n="contact.city.munich">Munich, Germany</p>
+            <p class="contact-location-street" data-i18n="contact.street.munich">Allach-Untermenzing, 80999 München</p>
+            <p class="contact-location-detail" data-i18n="contact.hours">Monday – Friday &nbsp;·&nbsp; 09:00 – 18:00</p>
+            <p class="contact-modes" data-i18n="contact.remote">Remote</p>
           </div>
 
           <div class="contact-socials">
@@ -121,44 +122,44 @@
 
         <!-- RIGHT: Form -->
         <div class="contact-form-col">
-          <p class="contact-col-label">Contact: studio@lachinguluyev.com</p>
+          <p class="contact-col-label" data-i18n="contact.email">Contact: studio@lachinguluyev.com</p>
           <form id="contactForm" enctype="multipart/form-data" novalidate>
             <input type="hidden" name="_captcha" value="false" />
             <input type="hidden" name="_subject" value="New inquiry from portfolio" />
             <input type="hidden" name="_template" value="table" />
 
             <div class="form-row">
-              <label for="fname">Name</label>
+              <label for="fname" data-i18n="form.name">Name</label>
               <input type="text" id="fname" name="name" autocomplete="name" required />
             </div>
 
             <div class="form-row">
-              <label for="femail">Mail</label>
+              <label for="femail" data-i18n="form.mail">Mail</label>
               <input type="email" id="femail" name="email" autocomplete="email" required />
             </div>
 
             <div class="form-row">
-              <label for="fsubject">Subject</label>
+              <label for="fsubject" data-i18n="form.subject">Subject</label>
               <input type="text" id="fsubject" name="subject" required />
             </div>
 
             <div class="form-row">
-              <label>Files</label>
+              <label data-i18n="form.files">Files</label>
               <label class="form-file-wrap" for="contactFiles">
-                <span class="form-file-btn">Choose files</span>
-                <span class="form-file-name" id="fileName">No file chosen</span>
-                <span class="form-file-hint">Max 100 MB</span>
+                <span class="form-file-btn" data-i18n="form.choose">Choose files</span>
+                <span class="form-file-name" id="fileName" data-i18n="form.nofile">No file chosen</span>
+                <span class="form-file-hint" data-i18n="form.maxsize">Max 100 MB</span>
               </label>
               <input type="file" id="contactFiles" name="attachment" multiple />
             </div>
 
             <div class="form-row">
-              <label for="fmessage">Description or Message</label>
+              <label for="fmessage" data-i18n="form.message">Description or Message</label>
               <textarea id="fmessage" name="message" rows="5" required></textarea>
             </div>
 
             <p id="formStatus" class="form-status"></p>
-            <button type="submit" class="btn-send">Send</button>
+            <button type="submit" class="btn-send" data-i18n="form.send">Send</button>
           </form>
         </div>
 
@@ -178,6 +179,7 @@
     </div>
   </footer>
 
+  <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
   <script>
     /* ── File input ── */
@@ -189,15 +191,15 @@
       const totalSize = files.reduce((s, f) => s + f.size, 0);
 
       if (totalSize > 100 * 1024 * 1024) {
-        fileNameEl.textContent = 'Exceeds 100 MB limit';
+        fileNameEl.textContent = t('form.toobig');
         fileNameEl.classList.add('form-file-error');
         contactFiles.value = '';
         return;
       }
       fileNameEl.classList.remove('form-file-error');
-      fileNameEl.textContent = files.length === 0 ? 'No file chosen'
+      fileNameEl.textContent = files.length === 0 ? t('form.nofile')
                              : files.length === 1 ? files[0].name
-                             : files.length + ' files selected';
+                             : files.length + ' ' + t('form.selected');
     });
 
     /* ── Form submit ── */
@@ -209,7 +211,7 @@
       const btn = contactForm.querySelector('.btn-send');
 
       btn.disabled = true;
-      btn.textContent = 'Sending…';
+      btn.textContent = t('form.sending');
       formStatus.className = 'form-status';
       formStatus.textContent = '';
 
@@ -221,21 +223,21 @@
         });
 
         if (res.ok) {
-          formStatus.textContent = 'Message sent successfully.';
+          formStatus.textContent = t('form.ok');
           formStatus.classList.add('form-status--ok');
           contactForm.reset();
-          fileNameEl.textContent = 'No file chosen';
+          fileNameEl.textContent = t('form.nofile');
           fileNameEl.classList.remove('form-file-error');
         } else {
           throw new Error();
         }
       } catch {
-        formStatus.textContent = 'Something went wrong. Please try again.';
+        formStatus.textContent = t('form.err');
         formStatus.classList.add('form-status--err');
       }
 
       btn.disabled = false;
-      btn.textContent = 'Send';
+      btn.textContent = t('form.send');
     });
   </script>
 </body>

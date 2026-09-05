@@ -15,26 +15,27 @@
     <nav class="nav">
       <a href="index.html" class="nav-logo">LACHIN GULUYEV</a>
       <button class="nav-toggle" aria-label="Toggle menu">
-        <span class="toggle-text">Menu</span>
+        <span class="toggle-text" data-i18n="nav.menu">Menu</span>
       </button>
       <ul class="nav-links">
         <li class="nav-has-sub" id="worksNavItem">
-          <a href="index.html" id="worksNavBtn">Works</a>
+          <a href="index.html" id="worksNavBtn" data-i18n="nav.works">Works</a>
           <ul class="nav-sub" id="worksSubMenu">
-            <li><a href="index.html" data-filter="all">All</a></li>
-            <li><a href="index.html?filter=interiors" data-filter="interiors">Interiors</a></li>
-            <li><a href="index.html?filter=facade" data-filter="facade">Facade</a></li>
-            <li><a href="index.html?filter=interactive" data-filter="interactive">Interactive</a></li>
-            <li><a href="index.html?filter=products" data-filter="products">Products</a></li>
-            <li><a href="index.html?filter=construction" data-filter="construction">Construction</a></li>
+            <li><a href="index.html" data-filter="all" data-i18n="nav.all">All</a></li>
+            <li><a href="index.html?filter=interiors" data-filter="interiors" data-i18n="nav.interiors">Interiors</a></li>
+            <li><a href="index.html?filter=facade" data-filter="facade" data-i18n="nav.facade">Facade</a></li>
+            <li><a href="index.html?filter=interactive" data-filter="interactive" data-i18n="nav.interactive">Interactive</a></li>
+            <li><a href="index.html?filter=products" data-filter="products" data-i18n="nav.products">Products</a></li>
+            <li><a href="index.html?filter=construction" data-filter="construction" data-i18n="nav.construction">Construction</a></li>
           </ul>
         </li>
-        <li><a href="real-time-app.html">Real-Time Interactive</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="about.html" class="active">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="real-time-app.html" data-i18n="nav.realtime">Real-Time Interactive</a></li>
+        <li><a href="services.html" data-i18n="nav.services">Services</a></li>
+        <li><a href="about.html" class="active" data-i18n="nav.about">About</a></li>
+        <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
       </ul>
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><span class="tt-thumb"></span></button>
+      <button class="lang-btn" id="langBtn" aria-label="Change language">EN</button>
     </nav>
   </header>
 
@@ -52,11 +53,11 @@
 
         <div class="about-col-b">
           <div class="about-body">
-            <p>Hi, I'm <strong>Lachin</strong>. I stepped into the world of 3D back in 2016, and somewhere along the way, it stopped being just a skill and became something I genuinely love doing every day. My background is in Engineering and Business, but creativity is what really pulled me in — and kept me here.</p>
-            <p>Since then, I've been working with design studios and architectural firms, turning ideas into visuals that don't just look good, but feel real and alive.</p>
-            <p>My main toolkit includes <strong>3ds Max</strong>, <strong>Corona Renderer</strong>, <strong>Photoshop</strong>, <strong>Unreal Engine</strong>, <strong>AutoCAD</strong>, and <strong>ComfyUI</strong>. Lately, I've been pushing more into real-time experiences with Unreal Engine — building interactive applications where you can actually walk through and explore spaces. I also create animations and 360° tours to make projects more immersive and engaging.</p>
-            <p>I'm especially into anything that blends architecture, visualization, and interactivity. I like experimenting, trying new approaches, and working in creative spaces where ideas can evolve into something unexpected.</p>
-            <p>I work with clients from all over the world — remotely, hybrid, or on-site — always focused on creating something unique, thoughtful, and a bit beyond the ordinary.</p>
+            <p data-i18n="about.p1">Hi, I'm <strong>Lachin</strong>. I stepped into the world of 3D back in 2016, and somewhere along the way, it stopped being just a skill and became something I genuinely love doing every day. My background is in Engineering and Business, but creativity is what really pulled me in — and kept me here.</p>
+            <p data-i18n="about.p2">Since then, I've been working with design studios and architectural firms, turning ideas into visuals that don't just look good, but feel real and alive.</p>
+            <p data-i18n="about.p3">My main toolkit includes <strong>3ds Max</strong>, <strong>Corona Renderer</strong>, <strong>Photoshop</strong>, <strong>Unreal Engine</strong>, <strong>AutoCAD</strong>, and <strong>ComfyUI</strong>. Lately, I've been pushing more into real-time experiences with Unreal Engine — building interactive applications where you can actually walk through and explore spaces. I also create animations and 360° tours to make projects more immersive and engaging.</p>
+            <p data-i18n="about.p4">I'm especially into anything that blends architecture, visualization, and interactivity. I like experimenting, trying new approaches, and working in creative spaces where ideas can evolve into something unexpected.</p>
+            <p data-i18n="about.p5">I work with clients from all over the world — remotely, hybrid, or on-site — always focused on creating something unique, thoughtful, and a bit beyond the ordinary.</p>
           </div>
 
           <div class="toolkit-strip">
@@ -78,25 +79,25 @@
       <div class="about-stats reveal">
         <div class="about-stat">
           <span class="about-stat-num">9+</span>
-          <span class="about-stat-label">Years</span>
+          <span class="about-stat-label" data-i18n="about.stat.years">Years</span>
         </div>
         <div class="about-stat">
           <span class="about-stat-num">200+</span>
-          <span class="about-stat-label">Projects</span>
+          <span class="about-stat-label" data-i18n="about.stat.projects">Projects</span>
         </div>
         <div class="about-stat">
           <span class="about-stat-num">1st</span>
-          <span class="about-stat-label">Award Winning Artist</span>
+          <span class="about-stat-label" data-i18n="about.stat.award">Award Winning Artist</span>
         </div>
         <div class="about-stat">
           <span class="about-stat-num">360°</span>
-          <span class="about-stat-label">Interactive &amp; Virtual Tours</span>
+          <span class="about-stat-label" data-i18n="about.stat.tours">Interactive &amp; Virtual Tours</span>
         </div>
       </div>
 
       <!-- Awards & Media -->
       <div class="awards-section">
-        <p class="awards-heading">Awards &amp; Media</p>
+        <p class="awards-heading" data-i18n="about.awards.heading">Awards &amp; Media</p>
         <div class="award-entries">
 
           <div class="award-entry reveal">
@@ -105,8 +106,8 @@
               <div class="award-play">&#9654;</div>
             </a>
             <div class="award-body">
-              <span class="award-meta">2026 &nbsp;·&nbsp; Azad Azerbaijan Television</span>
-              <p>Invited to one of the most well-known TV channels in Azerbaijan to give an interview about 3D technologies. A live presentation of my Unreal Engine application was also broadcast during the program.</p>
+              <span class="award-meta" data-i18n="about.award1.meta">2026 &nbsp;·&nbsp; Azad Azerbaijan Television</span>
+              <p data-i18n="about.award1.body">Invited to one of the most well-known TV channels in Azerbaijan to give an interview about 3D technologies. A live presentation of my Unreal Engine application was also broadcast during the program.</p>
             </div>
           </div>
 
@@ -115,8 +116,8 @@
               <img src="assets/images/azerbaijan design award 1st place.png" alt="Azerbaijan Design Award" />
             </div>
             <div class="award-body">
-              <span class="award-meta">2025 &nbsp;·&nbsp; Azerbaijan Design Award — 1st Place</span>
-              <p>Won 1st place in the Visualization category with my Hyundai Santa Fe project at one of the largest design competitions in Azerbaijan.</p>
+              <span class="award-meta" data-i18n="about.award2.meta">2025 &nbsp;·&nbsp; Azerbaijan Design Award — 1st Place</span>
+              <p data-i18n="about.award2.body">Won 1st place in the Visualization category with my Hyundai Santa Fe project at one of the largest design competitions in Azerbaijan.</p>
             </div>
           </div>
 
@@ -125,8 +126,8 @@
               <img src="assets/images/Corona renderer published.jpg" alt="Corona Renderer Feature" />
             </div>
             <div class="award-body">
-              <span class="award-meta">Corona Renderer &nbsp;·&nbsp; Official Feature</span>
-              <p>The official Corona Renderer Instagram page shared my "Dream Apartment" project, praising the realism of the renders and the atmosphere created throughout the space.</p>
+              <span class="award-meta" data-i18n="about.award3.meta">Corona Renderer &nbsp;·&nbsp; Official Feature</span>
+              <p data-i18n="about.award3.body">The official Corona Renderer Instagram page shared my "Dream Apartment" project, praising the realism of the renders and the atmosphere created throughout the space.</p>
             </div>
           </div>
 
@@ -135,8 +136,8 @@
               <img src="assets/images/renderize community artist of month 1st place.png" alt="Renderize Artist of the Month" />
             </div>
             <div class="award-body">
-              <span class="award-meta">November 2020 &nbsp;·&nbsp; Renderize — Artist of the Month</span>
-              <p>Selected as the best visualization of the month by the Renderize community. As a winner, I received one-year software licenses and my work was featured on their Instagram and website.</p>
+              <span class="award-meta" data-i18n="about.award4.meta">November 2020 &nbsp;·&nbsp; Renderize — Artist of the Month</span>
+              <p data-i18n="about.award4.body">Selected as the best visualization of the month by the Renderize community. As a winner, I received one-year software licenses and my work was featured on their Instagram and website.</p>
             </div>
           </div>
 
@@ -145,8 +146,8 @@
               <img src="assets/images/BlackMamba magazine.png" alt="Black Mamba Magazine" />
             </div>
             <div class="award-body">
-              <span class="award-meta">2019 &nbsp;·&nbsp; Black Mamba Magazine</span>
-              <p>My "Tokyo Apartment" project was published in Black Mamba Magazine and covered on their official Instagram, reaching a wide international audience of design enthusiasts.</p>
+              <span class="award-meta" data-i18n="about.award5.meta">2019 &nbsp;·&nbsp; Black Mamba Magazine</span>
+              <p data-i18n="about.award5.body">My "Tokyo Apartment" project was published in Black Mamba Magazine and covered on their official Instagram, reaching a wide international audience of design enthusiasts.</p>
             </div>
           </div>
 
@@ -168,6 +169,7 @@
     </div>
   </footer>
 
+  <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

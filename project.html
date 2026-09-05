@@ -15,33 +15,34 @@
     <nav class="nav">
       <a href="index.html" class="nav-logo">LACHIN GULUYEV</a>
       <button class="nav-toggle" aria-label="Toggle menu">
-        <span class="toggle-text">Menu</span>
+        <span class="toggle-text" data-i18n="nav.menu">Menu</span>
       </button>
       <ul class="nav-links">
         <li class="nav-has-sub" id="worksNavItem">
-          <a href="index.html" id="worksNavBtn">Works</a>
+          <a href="index.html" id="worksNavBtn" data-i18n="nav.works">Works</a>
           <ul class="nav-sub" id="worksSubMenu">
-            <li><a href="index.html" data-filter="all">All</a></li>
-            <li><a href="index.html?filter=interiors" data-filter="interiors">Interiors</a></li>
-            <li><a href="index.html?filter=facade" data-filter="facade">Facade</a></li>
-            <li><a href="index.html?filter=interactive" data-filter="interactive">Interactive</a></li>
-            <li><a href="index.html?filter=products" data-filter="products">Products</a></li>
-            <li><a href="index.html?filter=construction" data-filter="construction">Construction</a></li>
+            <li><a href="index.html" data-filter="all" data-i18n="nav.all">All</a></li>
+            <li><a href="index.html?filter=interiors" data-filter="interiors" data-i18n="nav.interiors">Interiors</a></li>
+            <li><a href="index.html?filter=facade" data-filter="facade" data-i18n="nav.facade">Facade</a></li>
+            <li><a href="index.html?filter=interactive" data-filter="interactive" data-i18n="nav.interactive">Interactive</a></li>
+            <li><a href="index.html?filter=products" data-filter="products" data-i18n="nav.products">Products</a></li>
+            <li><a href="index.html?filter=construction" data-filter="construction" data-i18n="nav.construction">Construction</a></li>
           </ul>
         </li>
-        <li><a href="real-time-app.html">Real-Time Interactive</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="real-time-app.html" data-i18n="nav.realtime">Real-Time Interactive</a></li>
+        <li><a href="services.html" data-i18n="nav.services">Services</a></li>
+        <li><a href="about.html" data-i18n="nav.about">About</a></li>
+        <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
       </ul>
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><span class="tt-thumb"></span></button>
+      <button class="lang-btn" id="langBtn" aria-label="Change language">EN</button>
     </nav>
   </header>
 
   <main class="main">
     <div class="project-wrap">
 
-      <a href="index.html" class="project-back">&#8592; Works</a>
+      <a href="index.html" class="project-back" data-i18n="project.back">&#8592; Works</a>
 
       <h1 class="project-title"></h1>
 
@@ -82,6 +83,7 @@
   </div>
 
   <script src="js/projects.js"></script>
+  <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
   <script src="js/project.js"></script>
 </body>

@@ -15,32 +15,33 @@
     <nav class="nav">
       <a href="index.html" class="nav-logo">LACHIN GULUYEV</a>
       <button class="nav-toggle" aria-label="Toggle menu">
-        <span class="toggle-text">Menu</span>
+        <span class="toggle-text" data-i18n="nav.menu">Menu</span>
       </button>
       <ul class="nav-links">
         <li class="nav-has-sub" id="worksNavItem">
-          <a href="index.html" id="worksNavBtn">Works</a>
+          <a href="index.html" id="worksNavBtn" data-i18n="nav.works">Works</a>
           <ul class="nav-sub" id="worksSubMenu">
-            <li><a href="index.html" data-filter="all">All</a></li>
-            <li><a href="index.html?filter=interiors" data-filter="interiors">Interiors</a></li>
-            <li><a href="index.html?filter=facade" data-filter="facade">Facade</a></li>
-            <li><a href="index.html?filter=interactive" data-filter="interactive">Interactive</a></li>
-            <li><a href="index.html?filter=products" data-filter="products">Products</a></li>
-            <li><a href="index.html?filter=construction" data-filter="construction">Construction</a></li>
+            <li><a href="index.html" data-filter="all" data-i18n="nav.all">All</a></li>
+            <li><a href="index.html?filter=interiors" data-filter="interiors" data-i18n="nav.interiors">Interiors</a></li>
+            <li><a href="index.html?filter=facade" data-filter="facade" data-i18n="nav.facade">Facade</a></li>
+            <li><a href="index.html?filter=interactive" data-filter="interactive" data-i18n="nav.interactive">Interactive</a></li>
+            <li><a href="index.html?filter=products" data-filter="products" data-i18n="nav.products">Products</a></li>
+            <li><a href="index.html?filter=construction" data-filter="construction" data-i18n="nav.construction">Construction</a></li>
           </ul>
         </li>
-        <li><a href="real-time-app.html" class="active">Real-Time Interactive</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="real-time-app.html" class="active" data-i18n="nav.realtime">Real-Time Interactive</a></li>
+        <li><a href="services.html" data-i18n="nav.services">Services</a></li>
+        <li><a href="about.html" data-i18n="nav.about">About</a></li>
+        <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
       </ul>
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><span class="tt-thumb"></span></button>
+      <button class="lang-btn" id="langBtn" aria-label="Change language">EN</button>
     </nav>
   </header>
 
   <main class="main">
     <div class="page-wrap page-wrap--wide">
-      <p class="rta-main-heading">Interactive Architectural Virtual Application</p>
+      <p class="rta-main-heading" data-i18n="rta.heading">Interactive Architectural Virtual Application</p>
 
       <!-- Videos Row -->
       <section class="rta-section">
@@ -77,7 +78,7 @@
 
       <!-- 360 Virtual Tours -->
       <section class="rta-section">
-        <p class="rta-section-label">360 Virtual Tours</p>
+        <p class="rta-section-label" data-i18n="rta.tours">360 Virtual Tours</p>
         <div class="rta-tours-row">
           <iframe
             src="https://kuula.co/share/collection/7F886?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1"
@@ -96,7 +97,7 @@
 
       <!-- Animation -->
       <section class="rta-section">
-        <p class="rta-section-label">Animation</p>
+        <p class="rta-section-label" data-i18n="rta.anim">Animation</p>
         <div class="rta-row">
           <div class="rta-card" data-yt="FBtxzU0vlhE">
             <img src="https://img.youtube.com/vi/FBtxzU0vlhE/maxresdefault.jpg" alt="Animation 1" />
@@ -134,6 +135,7 @@
     </div>
   </footer>
 
+  <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
   <script>
     const rtaLb     = document.getElementById('rtaLb');

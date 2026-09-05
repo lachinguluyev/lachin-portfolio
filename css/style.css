@@ -288,6 +288,27 @@ body {
 [data-theme="dark"] .tt-thumb::before { opacity: 0; }
 [data-theme="dark"] .tt-thumb::after  { opacity: 1; }
 
+/* ─── LANGUAGE SWITCH ────────────────────────────────── */
+.lang-btn {
+  margin-left: 18px;
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  padding: 0;
+  min-width: 24px;
+  text-align: center;
+  font-family: var(--font);
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text);
+  cursor: pointer;
+  opacity: 0.75;
+  transition: opacity var(--ease), color var(--ease);
+}
+
+.lang-btn:hover { opacity: 1; }
+
 /* ─── NAV DROPDOWN ───────────────────────────────────── */
 .nav-has-sub { position: relative; }
 
@@ -1509,6 +1530,8 @@ input[type="file"] { display: none; }
   .header.nav-open .nav-logo   { color: rgba(255,255,255,0.75); }
   .header.nav-open .nav-toggle { color: rgba(255,255,255,0.75); }
   .header.nav-open .theme-toggle { display: none; }
+  .header.nav-open .lang-btn { display: none; }
+  .lang-btn { margin-left: 14px; font-size: 11px; letter-spacing: 0.12em; }
 
   /* Nav links hidden by default; absolute-fill below logo row when open */
   .nav-links {

@@ -7,6 +7,12 @@
   const project = projects.find(p => p.id === id);
   if (!project) return;
 
+  /* localized copy — falls back to the English fields */
+  function loc(field) {
+    const lang = (typeof currentLang !== 'undefined') ? currentLang : 'en';
+    return (project.i18n && project.i18n[lang] && project.i18n[lang][field]) || project[field];
+  }
+
   /* title */
   document.title = project.title + ' — LACHIN GULUYEV';
   const titleEl = document.querySelector('.project-title');
@@ -22,22 +28,29 @@
     heroImg.alt = project.title;
   }
 
-  /* meta */
+  /* meta + description (re-rendered when the language changes) */
   const metaEl = document.querySelector('.project-meta');
-  if (metaEl && project.meta) {
-    metaEl.innerHTML = project.meta.map(m => `
-      <div class="project-meta-item">
-        <span class="project-meta-label">${m.label}</span>
-        <span class="project-meta-value">${m.value}</span>
-      </div>
-    `).join('');
+  const descEl = document.querySelector('.project-desc');
+
+  function renderText() {
+    const meta = loc('meta');
+    if (metaEl && meta) {
+      metaEl.innerHTML = meta.map(m => `
+        <div class="project-meta-item">
+          <span class="project-meta-label">${m.label}</span>
+          <span class="project-meta-value">${m.value}</span>
+        </div>
+      `).join('');
+    }
+
+    const desc = loc('description');
+    if (descEl && desc) {
+      descEl.innerHTML = desc.split('\n\n').map(p => `<p>${p.replace(/\n/g, '<br>')}</p>`).join('');
+    }
   }
 
-  /* description */
-  const descEl = document.querySelector('.project-desc');
-  if (descEl && project.description) {
-    descEl.innerHTML = project.description.split('\n\n').map(p => `<p>${p.replace(/\n/g, '<br>')}</p>`).join('');
-  }
+  renderText();
+  document.addEventListener('langchange', renderText);
 
   /* side video layout — wraps project-body and places video beside it */
   if (project.sideVideo) {

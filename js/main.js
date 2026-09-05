@@ -87,7 +87,7 @@ const headerEl  = document.querySelector('.header');
 function closeMobileNav() {
   navLinks.classList.remove('open');
   if (headerEl) headerEl.classList.remove('nav-open');
-  if (toggleTxt) toggleTxt.textContent = 'Menu';
+  if (toggleTxt) toggleTxt.textContent = t('nav.menu');
   document.body.style.overflow = '';
 }
 
@@ -95,7 +95,7 @@ if (navToggle) {
   navToggle.addEventListener('click', () => {
     const open = navLinks.classList.toggle('open');
     if (headerEl) headerEl.classList.toggle('nav-open', open);
-    if (toggleTxt) toggleTxt.textContent = open ? 'Close' : 'Menu';
+    if (toggleTxt) toggleTxt.textContent = open ? t('nav.close') : t('nav.menu');
     document.body.style.overflow = open ? 'hidden' : '';
   });
 }
