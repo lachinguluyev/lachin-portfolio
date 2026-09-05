@@ -8,6 +8,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+  <script>
+    /* set theme before first paint — dark is the default for new visitors */
+    (function () {
+      var t = "dark";
+      try { t = localStorage.getItem("theme") || "dark"; } catch (e) {}
+      document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
 </head>
 <body>
 
