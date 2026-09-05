@@ -166,9 +166,27 @@ if ('IntersectionObserver' in window) {
 ───────────────────────────────────────────────────────── */
 buildWorks();
 
-document.querySelectorAll('.toolkit-logos img').forEach(img => {
-  img.addEventListener('contextmenu', e => e.preventDefault());
-  img.addEventListener('dragstart',   e => e.preventDefault());
+/* ─────────────────────────────────────────────────────────
+   VIEW-ONLY MEDIA
+   Blocks the save/copy routes a visitor has on the images:
+   right-click menu, drag-to-desktop and text selection over them.
+   Delegated on document so it also covers the grid, the project
+   photos and the lightbox, which are all built at runtime.
+───────────────────────────────────────────────────────── */
+const MEDIA_ZONES = [
+  '.work-card', '.project-photo', '.project-hero', '.project-photos',
+  '.lightbox', '.about-photo-wrap', '.award-thumb', '.rta-card',
+  '.toolkit-logos', '.project-side-media', '.svc-row-media', '.rta-tours-row',
+].join(', ');
+
+document.addEventListener('contextmenu', e => {
+  if (e.target.closest(MEDIA_ZONES)) e.preventDefault();
+});
+
+document.addEventListener('dragstart', e => e.preventDefault());
+
+document.addEventListener('selectstart', e => {
+  if (e.target.closest(MEDIA_ZONES)) e.preventDefault();
 });
 
 /* ─────────────────────────────────────────────────────────

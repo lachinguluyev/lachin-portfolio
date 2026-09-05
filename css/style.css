@@ -151,6 +151,26 @@ body {
   transform: none;
 }
 
+/* ─── VIEW-ONLY MEDIA ────────────────────────────────── */
+/* Images and videos are display-only: they cannot be dragged out, selected,
+   long-pressed on mobile, and pointer-events:none makes the right-click land
+   on the wrapper instead of the image, so the browser offers no
+   "Save image as…" / "Copy image" entry. */
+img,
+video {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  pointer-events: none;
+}
+
 /* ─── HEADER ─────────────────────────────────────────── */
 .header {
   position: fixed;
