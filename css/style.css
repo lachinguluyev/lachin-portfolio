@@ -171,6 +171,41 @@ video {
   pointer-events: none;
 }
 
+/* Chrome still finds the image under the cursor in some versions, so a
+   transparent layer is laid over every picture: the context menu then targets
+   that layer and offers no image commands. Clicks bubble to the wrapper, so
+   the grid links, the lightbox and the video cards keep working. */
+.work-card-img,
+.project-hero,
+.project-photo,
+.lb-media,
+.about-photo-wrap,
+.award-thumb,
+.rta-card,
+.rta-lb-inner,
+.toolkit-logos,
+.project-side-media,
+.svc-row-media {
+  position: relative;
+}
+
+.work-card-img::after,
+.project-hero::after,
+.project-photo::after,
+.lb-media::after,
+.about-photo-wrap::after,
+.award-thumb::after,
+.rta-card::after,
+.toolkit-logos::after,
+.project-side-media::after,
+.svc-row-media::after,
+.rta-lb-inner:has(img)::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+}
+
 /* ─── HEADER ─────────────────────────────────────────── */
 .header {
   position: fixed;

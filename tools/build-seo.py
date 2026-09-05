@@ -458,8 +458,11 @@ vercel = {
     "headers": [
         {"source": "/assets/(.*)",
          "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]},
+        # css/js have no content hash in their names, so let the browser
+        # revalidate on every load (a 304 is a few bytes) — otherwise a fix
+        # can sit unseen in the visitor's cache for an hour.
         {"source": "/(css|js)/(.*)",
-         "headers": [{"key": "Cache-Control", "value": "public, max-age=3600, must-revalidate"}]},
+         "headers": [{"key": "Cache-Control", "value": "public, max-age=0, must-revalidate"}]},
     ],
 }
 io.open("vercel.json", "w", encoding="utf-8", newline="\n").write(
