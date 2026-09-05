@@ -1,7 +1,9 @@
 /* ─── PROJECT DETAIL PAGE ─── */
 
 (function () {
-  const id = new URLSearchParams(window.location.search).get('id');
+  /* id comes from the static page (data-project) or from ?id= on the legacy URL */
+  const id = document.body.dataset.project
+          || new URLSearchParams(window.location.search).get('id');
   if (!id || typeof projects === 'undefined') return;
 
   const project = projects.find(p => p.id === id);
@@ -85,10 +87,11 @@
   /* photo grid — all images including cover */
   const photosEl = document.querySelector('.project-photos');
   if (photosEl) {
+    photosEl.innerHTML = '';   /* clear the pre-rendered markup on static pages */
     project.images.forEach((src, i) => {
       const div = document.createElement('div');
       div.className = 'project-photo';
-      div.innerHTML = `<img src="${src}" alt="${project.title} ${i + 1}" loading="lazy">`;
+      div.innerHTML = `<img src="${src}" alt="${project.title} — ${project.category} visualization, image ${i + 1}" loading="${i === 0 ? 'eager' : 'lazy'}">`;
       div.addEventListener('click', () => openLb(i));
       photosEl.appendChild(div);
     });

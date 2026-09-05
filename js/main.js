@@ -21,11 +21,11 @@ function buildWorks() {
 
   visible.forEach(project => {
     const a = document.createElement('a');
-    a.href      = 'project.html?id=' + project.id;
+    a.href      = project.id + '.html';
     a.className = 'work-card';
     a.innerHTML = `
       <div class="work-card-img">
-        <img src="${project.cover}" alt="${project.title}" loading="lazy">
+        <img src="${project.cover}" alt="${project.title} — ${project.category} visualization by Lachin Guluyev" loading="lazy">
       </div>
       <div class="work-card-info">
         <span class="work-card-title">${project.title}</span>

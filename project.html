@@ -4,6 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Project — LACHIN GULUYEV</title>
+  <meta name="robots" content="noindex, follow" />
+  <script>
+    /* legacy URL: project.html?id=X now lives at /X — redirect, keep old links alive */
+    (function () {
+      var id = new URLSearchParams(location.search).get('id');
+      if (id && /^[a-z0-9-]+$/.test(id)) location.replace(id + '.html' + location.hash);
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap" rel="stylesheet" />

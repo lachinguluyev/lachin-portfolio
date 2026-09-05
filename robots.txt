@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# project.html and course.html carry a noindex tag — they stay crawlable
+# on purpose so search engines can read that tag and drop them.
+
+Sitemap: https://lachinguluyev.com/sitemap.xml
