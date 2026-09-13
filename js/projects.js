@@ -172,7 +172,7 @@ const projects = [
       },
     },
     title: 'Swiss Archviz',
-    cover: 'assets/images/Swiss Archviz/Camera 1.jpg',
+    cover: 'assets/images/Swiss Archviz/Camera 3.jpg',
     noHero: true,
     sideVideo: 'assets/videos/Swiss Arcviz.webm',
     images: [
