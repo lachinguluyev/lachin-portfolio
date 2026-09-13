@@ -1,5 +1,42 @@
 const projects = [
   {
+    id: 'miami-towers',
+    i18n: {
+      de: {
+        description: "Dieses Hochhaus an der ikonischen Küste Miamis wurde als Destination entworfen, die ganz auf Hotellerie und Tourismus ausgerichtet ist. Das Projekt ist nicht gebaut und existiert nur als Designkonzept.\n\nDas Ergebnis ist eine Verbindung aus realer Fotografie, 3D-Visualisierung und KI — eine der spannendsten und sich am schnellsten entwickelnden Richtungen in der heutigen Kreativbranche.",
+        meta: [
+          { label: "Animation & 3D-Modellierung", value: "Lachin Guluyev ( @lachin.architects )" },
+          { label: "Drohnenfotografie", value: "Irasema McAllister" },
+          { label: "Projekt", value: "Nicht gebaut / Konzept" },
+        ],
+      },
+      az: {
+        description: "Mayaminin məşhur sahillərində yerləşən bu qüllə tamamilə qonaqpərvərlik və turizmə fokuslanmış bir məkan kimi dizayn edilib. Layihə tikilməyib — yalnız dizayn konsepti kimi mövcuddur.\n\nNəticə real fotoqrafiya, 3D vizuallaşdırma və süni intellektin birləşməsidir — bu, kreativ sənayenin bu günkü ən maraqlı və ən sürətlə inkişaf edən istiqamətlərindən biridir.",
+        meta: [
+          { label: "Animasiya və 3D Modelləşdirmə", value: "Lachin Guluyev ( @lachin.architects )" },
+          { label: "Dron Fotoqrafiyası", value: "Irasema McAllister" },
+          { label: "Layihə", value: "Tikilməyib / Konsept" },
+        ],
+      },
+    },
+    title: 'Miami Towers CGI',
+    cover: 'assets/images/Miami Towers/MIAMI TOWERS.jpg',
+    coverVideo: 'assets/videos/Miami FON.webm',
+    noHero: true,
+    sideVideo: 'assets/videos/CGI MIAMI.webm',
+    sideImage: 'assets/images/Miami Towers/MIAMI TOWERS.jpg',
+    images: [
+      'assets/images/Miami Towers/MIAMI TOWERS.jpg',
+    ],
+    category: 'facade',
+    meta: [
+      { label: 'Animation & 3D Modeling', value: 'Lachin Guluyev ( @lachin.architects )' },
+      { label: 'Drone Photography',       value: 'Irasema McAllister' },
+      { label: 'Project',                 value: 'Unbuilt / Concept' },
+    ],
+    description: 'Located along the iconic shores of Miami, this tower was designed as a destination focused entirely on hospitality and tourism. The project is completely unbuilt, existing only as a design concept.\n\nThe result is a blend of real photography, 3D visualization and AI — one of the most exciting and rapidly evolving directions in the creative industry today.',
+  },
+  {
     id: 'interactive-application',
     i18n: {
       de: {

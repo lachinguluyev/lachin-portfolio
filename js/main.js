@@ -23,9 +23,12 @@ function buildWorks() {
     const a = document.createElement('a');
     a.href      = project.id + '.html';
     a.className = 'work-card';
+    const cardMedia = project.coverVideo
+      ? `<video src="${project.coverVideo}" autoplay loop muted playsinline aria-label="${project.title} — ${project.category} visualization by Lachin Guluyev"></video>`
+      : `<img src="${project.cover}" alt="${project.title} — ${project.category} visualization by Lachin Guluyev" loading="lazy">`;
     a.innerHTML = `
       <div class="work-card-img">
-        <img src="${project.cover}" alt="${project.title} — ${project.category} visualization by Lachin Guluyev" loading="lazy">
+        ${cardMedia}
       </div>
       <div class="work-card-info">
         <span class="work-card-title">${project.title}</span>

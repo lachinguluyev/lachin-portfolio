@@ -54,8 +54,22 @@
   renderText();
   document.addEventListener('langchange', renderText);
 
+  /* media row — video with the photo beside it, below the text */
+  if (project.sideVideo && project.sideImage) {
+    const bodyEl = document.querySelector('.project-body');
+    if (bodyEl) {
+      const row = document.createElement('div');
+      row.className = 'project-media-row';
+      row.innerHTML = `
+        <div class="project-side-media"><video src="${project.sideVideo}" class="project-webp-anim" autoplay loop muted playsinline></video></div>
+        <div class="project-photo"><img src="${project.sideImage}" alt="${project.title}"></div>`;
+      bodyEl.parentNode.insertBefore(row, bodyEl.nextSibling);
+      const idx = project.images.indexOf(project.sideImage);
+      if (idx > -1) row.querySelector('.project-photo').addEventListener('click', () => openLb(idx));
+    }
+  }
   /* side video layout — wraps project-body and places video beside it */
-  if (project.sideVideo) {
+  else if (project.sideVideo) {
     const bodyEl = document.querySelector('.project-body');
     if (bodyEl) {
       const wrap = document.createElement('div');
@@ -89,6 +103,7 @@
   if (photosEl) {
     photosEl.innerHTML = '';   /* clear the pre-rendered markup on static pages */
     project.images.forEach((src, i) => {
+      if (src === project.sideImage) return;   /* already shown in the media row */
       const div = document.createElement('div');
       div.className = 'project-photo';
       div.innerHTML = `<img src="${src}" alt="${project.title} — ${project.category} visualization, image ${i + 1}" loading="${i === 0 ? 'eager' : 'lazy'}">`;
