@@ -13,7 +13,7 @@ const projects = [
         sections: [
           {
             heading: "Hinter den Kulissen — die 3ds-Max-Szene",
-            text: "Jedes Bild beginnt als Rohszene in 3ds Max: Blockout der Geometrie, Kameraaufbau, Materialien und Lichtsetzung — lange bevor der finale Render entsteht. Diese Screenshots zeigen den Arbeitsstand im Viewport und den letzten Schliff in Photoshop.",
+            text: "Jedes Bild beginnt als Rohszene in 3ds Max: Blockout der Geometrie, Kameraaufbau, Materialien und Lichtsetzung — lange bevor der finale Render entsteht. Diese Screenshots zeigen den Arbeitsstand der Szene im Viewport.",
           },
         ],
       },
@@ -28,7 +28,7 @@ const projects = [
         sections: [
           {
             heading: "Səhnə arxası — 3ds Max səhnəsi",
-            text: "Hər şəkil 3ds Max-da xam səhnə kimi başlayır: həndəsənin bloklaşdırılması, kamera quruluşu, materiallar və işıq — final render yaranmazdan xeyli əvvəl. Bu screenshotlar viewport-dakı iş prosesini və Photoshop-dakı son toxunuşları göstərir.",
+            text: "Hər şəkil 3ds Max-da xam səhnə kimi başlayır: həndəsənin bloklaşdırılması, kamera quruluşu, materiallar və işıq — final render yaranmazdan xeyli əvvəl. Bu screenshotlar səhnənin viewport-dakı iş vəziyyətini göstərir.",
           },
         ],
       },
@@ -40,20 +40,20 @@ const projects = [
       'assets/images/Mountain House/ps2.jpg',
       'assets/images/Mountain House/ps3.jpg',
       'assets/images/Mountain House/ps5.jpg',
+    ],
+    /* full-width shots shown right below the photo grid */
+    wideImages: [
       'assets/images/Mountain House/ps4.jpg',
     ],
     /* extra text + image blocks rendered below the main photo grid */
     sections: [
       {
         heading: 'Behind the Scenes — the 3ds Max Scene',
-        text: 'Every image starts as a raw scene in 3ds Max: blocking out the geometry, setting up the cameras, building materials and placing the lights — long before the final render exists. These screenshots show the working state in the viewport and the final touches in Photoshop.',
+        text: 'Every image starts as a raw scene in 3ds Max: blocking out the geometry, setting up the cameras, building materials and placing the lights — long before the final render exists. These screenshots show the working state of the scene in the viewport.',
         images: [
           'assets/images/Mountain House/screen1.png',
           'assets/images/Mountain House/screen2.png',
           'assets/images/Mountain House/screen3.png',
-        ],
-        wideImages: [
-          'assets/images/Mountain House/screen photoshop.png',
         ],
       },
     ],

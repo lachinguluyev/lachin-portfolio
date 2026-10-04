@@ -320,6 +320,8 @@ PAGE_TPL = u"""<!DOCTYPE html>
 
       <div class="project-photos">{photos}</div>
 
+      <div class="project-wide">{wide}</div>
+
       <div class="project-sections">{sections}</div>
 
     </div>
@@ -363,7 +365,7 @@ for p in PROJECTS:
         "headline": p["title"],
         "description": make_desc(p["description"], 300),
         "url": canonical,
-        "image": [url_enc(src) for src in p["images"]
+        "image": [url_enc(src) for src in p["images"] + p.get("wideImages", [])
                   + [i for sec in p.get("sections", []) for i in sec.get("images", []) + sec.get("wideImages", [])]],
         "thumbnailUrl": og_image,
         "genre": cat,
@@ -417,6 +419,14 @@ for p in PROJECTS:
                        % (esc(src), esc(p["title"]), esc(cat.lower()), i + 1, lazy))
     photo_html += "\n      "
 
+    # full-width shots right below the photo grid (optional)
+    wide_html = "".join(
+        '\n        <div class="project-photo-wide"><img src="%s" alt="%s — %s" loading="lazy"></div>'
+        % (esc(src), esc(p["title"]), esc(cat.lower()))
+        for src in p.get("wideImages", []))
+    if wide_html:
+        wide_html += "\n      "
+
     # extra text + image sections below the photo grid (optional)
     sections_html = ""
     for sec in p.get("sections", []):
@@ -446,7 +456,7 @@ for p in PROJECTS:
         title=esc(title), theme=THEME_SCRIPT, seo=seo, pid=pid,
         header=HEADER, footer=FOOTER, lightbox=LIGHTBOX,
         h1=esc(p["title"]), hero=hero, meta=meta_html,
-        desc=desc_html, photos=photo_html, sections=sections_html)
+        desc=desc_html, photos=photo_html, wide=wide_html, sections=sections_html)
 
     io.open(pid + ".html", "w", encoding="utf-8", newline="\n").write(html)
     print("page -> %s.html" % pid)

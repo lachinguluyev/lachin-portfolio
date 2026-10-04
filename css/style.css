@@ -756,6 +756,7 @@ video {
   opacity: 0.78;
 }
 
+.project-wide:not(:empty),
 .project-section-wide {
   margin-top: var(--gap);
 }

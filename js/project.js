@@ -112,9 +112,23 @@
     });
   }
 
-  /* extra sections — heading + text + their own images, below the photo grid.
-     Section images continue the lightbox sequence after project.images. */
+  /* full-width shots right below the photo grid (lightbox continues after project.images) */
   const gallery = project.images.slice();
+  const wideEl = document.querySelector('.project-wide');
+  if (wideEl) {
+    wideEl.innerHTML = '';
+    (project.wideImages || []).forEach(src => {
+      const idx = gallery.push(src) - 1;
+      const div = document.createElement('div');
+      div.className = 'project-photo-wide';
+      div.innerHTML = `<img src="${src}" alt="${project.title} — ${project.category} visualization" loading="lazy">`;
+      div.addEventListener('click', () => openLb(idx));
+      wideEl.appendChild(div);
+    });
+  }
+
+  /* extra sections — heading + text + their own images, below the photo grid.
+     Section images continue the lightbox sequence after the images above. */
   const sections = project.sections || [];
   const sectionsEl = document.querySelector('.project-sections');
   if (sectionsEl) {
