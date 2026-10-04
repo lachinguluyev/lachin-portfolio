@@ -1,5 +1,72 @@
 const projects = [
   {
+    id: 'mountain-house',
+    i18n: {
+      de: {
+        description: "Design bedeutet nicht nur, wie ein Raum aussieht — sondern wie er sich anfühlt. Für dieses Interieur habe ich eine warme, ruhige und zeitlose Atmosphäre geschaffen: natürliches Holz, Stein, weiche neutrale Töne und klare architektonische Linien.\n\nDie 3D-Visualisierung wurde erstellt, um Designkonzept, Materialien, Proportionen und die gesamte Atmosphäre so realistisch wie möglich zu vermitteln. Für mich ist Architekturvisualisierung nicht einfach nur ein schönes Bild — sie übersetzt eine Idee in ein visuelles Erlebnis und hilft dem Kunden, den Raum zu verstehen, bevor er Realität wird.\n\nInnenarchitektur & 3D-Visualisierung\nKonzept • Materialien • Licht • Komposition • Visualisierung",
+        meta: [
+          { label: "Innenarchitekt & 3D-Artist", value: "Lachin Guluyev ( LACHIN ARCHITECTS )" },
+          { label: "Jahr", value: "2026" },
+          { label: "Technik", value: "Vollständig CGI — keine KI" },
+          { label: "Software", value: "3ds Max • Corona Renderer • Photoshop" },
+        ],
+        sections: [
+          {
+            heading: "Hinter den Kulissen — die 3ds-Max-Szene",
+            text: "Jedes Bild beginnt als Rohszene in 3ds Max: Blockout der Geometrie, Kameraaufbau, Materialien und Lichtsetzung — lange bevor der finale Render entsteht. Diese Screenshots zeigen den Arbeitsstand im Viewport und den letzten Schliff in Photoshop.",
+          },
+        ],
+      },
+      az: {
+        description: "Dizayn yalnız məkanın necə göründüyü deyil — necə hiss olunduğudur. Bu interyerdə təbii ağac, daş, yumşaq neytral tonlar və təmiz memarlıq xətlərini birləşdirərək isti, sakit və zamansız bir atmosfer yaratmağa fokuslandım.\n\n3D vizuallaşdırma dizayn konseptini, materialları, proporsiyaları və ümumi atmosferi mümkün qədər real çatdırmaq üçün hazırlanıb. Mənim üçün memarlıq vizuallaşdırması sadəcə gözəl şəkil yaratmaq deyil — ideyanı vizual təcrübəyə çevirmək və müştəriyə məkanı reallığa çevrilməzdən əvvəl anlamağa kömək etmək yoludur.\n\nİnteryer Dizaynı və 3D Vizuallaşdırma\nKonsept • Materiallar • İşıq • Kompozisiya • Vizuallaşdırma",
+        meta: [
+          { label: "İnteryer Dizayner və 3D Artist", value: "Lachin Guluyev ( LACHIN ARCHITECTS )" },
+          { label: "İl", value: "2026" },
+          { label: "Texnika", value: "Tam CGI — süni intellekt deyil" },
+          { label: "Proqramlar", value: "3ds Max • Corona Renderer • Photoshop" },
+        ],
+        sections: [
+          {
+            heading: "Səhnə arxası — 3ds Max səhnəsi",
+            text: "Hər şəkil 3ds Max-da xam səhnə kimi başlayır: həndəsənin bloklaşdırılması, kamera quruluşu, materiallar və işıq — final render yaranmazdan xeyli əvvəl. Bu screenshotlar viewport-dakı iş prosesini və Photoshop-dakı son toxunuşları göstərir.",
+          },
+        ],
+      },
+    },
+    title: 'Mountain House',
+    cover: 'assets/images/Mountain House/ps2.jpg',
+    hero: 'assets/images/Mountain House/ps1.jpg',
+    images: [
+      'assets/images/Mountain House/ps2.jpg',
+      'assets/images/Mountain House/ps3.jpg',
+      'assets/images/Mountain House/ps5.jpg',
+      'assets/images/Mountain House/ps4.jpg',
+    ],
+    /* extra text + image blocks rendered below the main photo grid */
+    sections: [
+      {
+        heading: 'Behind the Scenes — the 3ds Max Scene',
+        text: 'Every image starts as a raw scene in 3ds Max: blocking out the geometry, setting up the cameras, building materials and placing the lights — long before the final render exists. These screenshots show the working state in the viewport and the final touches in Photoshop.',
+        images: [
+          'assets/images/Mountain House/screen1.png',
+          'assets/images/Mountain House/screen2.png',
+          'assets/images/Mountain House/screen3.png',
+        ],
+        wideImages: [
+          'assets/images/Mountain House/screen photoshop.png',
+        ],
+      },
+    ],
+    category: 'interiors',
+    meta: [
+      { label: 'Interior Designer & 3D Artist', value: 'Lachin Guluyev ( LACHIN ARCHITECTS )' },
+      { label: 'Year',                          value: '2026' },
+      { label: 'Technique',                     value: 'Full CGI — not AI' },
+      { label: 'Software',                      value: '3ds Max • Corona Renderer • Photoshop' },
+    ],
+    description: 'Design is not only about how a space looks — it is about how it feels. For this interior, I focused on creating a warm, calm, and timeless atmosphere by combining natural wood, stone, soft neutral tones, and clean architectural lines.\n\nThe 3D visualization was created to communicate the design concept, materials, proportions, and overall atmosphere as realistically as possible. For me, architectural visualization is not simply about creating a beautiful image. It is a way to translate an idea into a visual experience and help the client understand the space before it becomes reality.\n\nInterior Design & 3D Visualization\nConcept • Materials • Lighting • Composition • Visualization',
+  },
+  {
     id: 'miami-towers',
     i18n: {
       de: {

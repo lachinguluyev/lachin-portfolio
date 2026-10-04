@@ -12,7 +12,7 @@ ROOT = r"C:\Users\user\Desktop\DESIGN\CODING\PROJECT1"
 os.chdir(ROOT)
 
 SITE = "https://lachinguluyev.com"
-TODAY = "2026-09-06"
+TODAY = "2026-10-04"
 
 START = "  <!-- SEO:START -->"
 END = "  <!-- SEO:END -->"
@@ -320,6 +320,8 @@ PAGE_TPL = u"""<!DOCTYPE html>
 
       <div class="project-photos">{photos}</div>
 
+      <div class="project-sections">{sections}</div>
+
     </div>
   </main>
 
@@ -361,7 +363,8 @@ for p in PROJECTS:
         "headline": p["title"],
         "description": make_desc(p["description"], 300),
         "url": canonical,
-        "image": [url_enc(src) for src in p["images"]],
+        "image": [url_enc(src) for src in p["images"]
+                  + [i for sec in p.get("sections", []) for i in sec.get("images", []) + sec.get("wideImages", [])]],
         "thumbnailUrl": og_image,
         "genre": cat,
         "inLanguage": "en",
@@ -414,11 +417,36 @@ for p in PROJECTS:
                        % (esc(src), esc(p["title"]), esc(cat.lower()), i + 1, lazy))
     photo_html += "\n      "
 
+    # extra text + image sections below the photo grid (optional)
+    sections_html = ""
+    for sec in p.get("sections", []):
+        imgs = "".join(
+            '\n          <div class="project-photo"><img src="%s" alt="%s — %s" loading="lazy"></div>'
+            % (esc(src), esc(p["title"]), esc(sec["heading"]))
+            for src in sec.get("images", []))
+        wide = "".join(
+            '\n          <div class="project-photo-wide"><img src="%s" alt="%s — %s" loading="lazy"></div>'
+            % (esc(src), esc(p["title"]), esc(sec["heading"]))
+            for src in sec.get("wideImages", []))
+        sections_html += (
+            '\n        <div class="project-section">'
+            '\n          <div class="project-section-text">'
+            '\n            <h2 class="project-section-heading">%s</h2>'
+            '\n            <p class="project-section-body">%s</p>'
+            '\n          </div>' % (esc(sec["heading"]), esc(sec["text"]).replace("\n", "<br>")))
+        if imgs:
+            sections_html += '\n          <div class="project-photos project-section-photos">%s\n          </div>' % imgs
+        if wide:
+            sections_html += '\n          <div class="project-section-wide">%s\n          </div>' % wide
+        sections_html += "\n        </div>"
+    if sections_html:
+        sections_html += "\n      "
+
     html = PAGE_TPL.format(
         title=esc(title), theme=THEME_SCRIPT, seo=seo, pid=pid,
         header=HEADER, footer=FOOTER, lightbox=LIGHTBOX,
         h1=esc(p["title"]), hero=hero, meta=meta_html,
-        desc=desc_html, photos=photo_html)
+        desc=desc_html, photos=photo_html, sections=sections_html)
 
     io.open(pid + ".html", "w", encoding="utf-8", newline="\n").write(html)
     print("page -> %s.html" % pid)

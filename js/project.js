@@ -112,6 +112,59 @@
     });
   }
 
+  /* extra sections — heading + text + their own images, below the photo grid.
+     Section images continue the lightbox sequence after project.images. */
+  const gallery = project.images.slice();
+  const sections = project.sections || [];
+  const sectionsEl = document.querySelector('.project-sections');
+  if (sectionsEl) {
+    sectionsEl.innerHTML = '';
+    sections.forEach((sec, si) => {
+      const wrap = document.createElement('div');
+      wrap.className = 'project-section';
+      wrap.innerHTML = `
+        <div class="project-section-text">
+          <h2 class="project-section-heading"></h2>
+          <p class="project-section-body"></p>
+        </div>
+        <div class="project-photos project-section-photos"></div>
+        <div class="project-section-wide"></div>`;
+      const grid = wrap.querySelector('.project-section-photos');
+      const wide = wrap.querySelector('.project-section-wide');
+      (sec.images || []).forEach(src => {
+        const idx = gallery.push(src) - 1;
+        const div = document.createElement('div');
+        div.className = 'project-photo';
+        div.innerHTML = `<img src="${src}" alt="${project.title} — ${sec.heading}" loading="lazy">`;
+        div.addEventListener('click', () => openLb(idx));
+        grid.appendChild(div);
+      });
+      (sec.wideImages || []).forEach(src => {
+        const idx = gallery.push(src) - 1;
+        const div = document.createElement('div');
+        div.className = 'project-photo-wide';
+        div.innerHTML = `<img src="${src}" alt="${project.title} — ${sec.heading}" loading="lazy">`;
+        div.addEventListener('click', () => openLb(idx));
+        wide.appendChild(div);
+      });
+      if (!grid.children.length) grid.remove();
+      if (!wide.children.length) wide.remove();
+      sectionsEl.appendChild(wrap);
+    });
+  }
+
+  function renderSectionText() {
+    if (!sectionsEl) return;
+    const locSecs = loc('sections') || [];
+    sectionsEl.querySelectorAll('.project-section').forEach((el, si) => {
+      const sec = Object.assign({}, sections[si], locSecs[si] || {});
+      el.querySelector('.project-section-heading').textContent = sec.heading || '';
+      el.querySelector('.project-section-body').innerHTML = (sec.text || '').replace(/\n/g, '<br>');
+    });
+  }
+  renderSectionText();
+  document.addEventListener('langchange', renderSectionText);
+
   /* lightbox */
   let lbIdx = 0;
   const lb      = document.getElementById('projectLb');
@@ -123,7 +176,7 @@
 
   function openLb(i) {
     lbIdx = i;
-    if (lbImg) { lbImg.src = project.images[lbIdx]; lbImg.alt = project.title; }
+    if (lbImg) { lbImg.src = gallery[lbIdx]; lbImg.alt = project.title; }
     if (lb) { lb.classList.add('open'); lb.setAttribute('aria-hidden', 'false'); }
     document.body.style.overflow = 'hidden';
   }
@@ -134,8 +187,8 @@
   }
 
   function step(dir) {
-    lbIdx = (lbIdx + dir + project.images.length) % project.images.length;
-    if (lbImg) { lbImg.src = project.images[lbIdx]; lbImg.alt = project.title; }
+    lbIdx = (lbIdx + dir + gallery.length) % gallery.length;
+    if (lbImg) { lbImg.src = gallery[lbIdx]; lbImg.alt = project.title; }
   }
 
   if (lb)      lb.addEventListener('click', closeLb);
