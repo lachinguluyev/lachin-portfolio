@@ -169,78 +169,212 @@
   </header>
 
   <main class="main">
-    <div class="page-wrap page-wrap--wide">
-      <p class="rta-main-heading" data-i18n="rta.heading">Interactive Architectural Virtual Application</p>
+    <div class="rta-wrap">
 
-      <!-- Videos Row -->
-      <section class="rta-section">
-        <div class="rta-row">
-          <div class="rta-card" data-yt="O2xC4U-ouK8">
-            <img src="https://img.youtube.com/vi/O2xC4U-ouK8/maxresdefault.jpg" alt="Real-Time Interactive 1" />
-            <div class="rta-play">&#9654;</div>
+      <!-- ── HERO ───────────────────────────────────────── -->
+      <section class="rta-hero">
+        <video class="rta-hero-video" autoplay muted loop playsinline poster="assets/images/REALTIME1.jpg">
+          <source src="assets/videos/Interactive application.webm" type="video/webm" />
+        </video>
+        <div class="rta-hero-shade"></div>
+        <div class="rta-hero-text">
+          <p class="rta-eyebrow rta-eyebrow--light" data-i18n="rta.eyebrow">Unreal Engine · Real-Time Visualization</p>
+          <h1 class="rta-title" data-i18n="rta.title">Real-Time<br>Interactive</h1>
+          <p class="rta-lead" data-i18n="rta.lead">Architecture you can walk through. Interactive applications, 360° tours and animations that let clients experience a project long before it is built.</p>
+        </div>
+        <nav class="rta-hero-index" aria-label="Page sections">
+          <a href="#rta-latest"><span>01</span><em data-i18n="rta.ix1">Latest 360° Tour</em></a>
+          <a href="#rta-app"><span>02</span><em data-i18n="rta.ix2">Unreal Application</em></a>
+          <a href="#rta-tours"><span>03</span><em data-i18n="rta.ix3">360° Tours</em></a>
+          <a href="#rta-anim"><span>04</span><em data-i18n="rta.ix4">Animation</em></a>
+        </nav>
+      </section>
+
+      <!-- ── 01 · LATEST PROJECT — 360 INTERIOR TOUR ────── -->
+      <section class="rta-block" id="rta-latest">
+        <div class="rta-block-head">
+          <span class="rta-num">01</span>
+          <div class="rta-block-titles">
+            <p class="rta-eyebrow"><span class="rta-live"></span><span data-i18n="rta.f.eyebrow">Latest project · 2026</span></p>
+            <h2 class="rta-h2" data-i18n="rta.f.title">Interior Apartment — Interactive 360° Tour</h2>
           </div>
-          <div class="rta-card" data-yt="pf0lx6K9D1w">
-            <img src="https://img.youtube.com/vi/pf0lx6K9D1w/maxresdefault.jpg" alt="Real-Time Interactive 2" />
-            <div class="rta-play">&#9654;</div>
+          <a class="rta-link" href="https://360sunum.com/s/2135a949bafeaa8229e6fdc41e086fa3" target="_blank" rel="noopener"><span data-i18n="rta.f.open">Open full tour</span>&nbsp;&#8599;</a>
+        </div>
+
+        <div class="rta-featured">
+          <div class="rta-featured-embed">
+            <iframe
+              src="https://360sunum.com/embed/2135a949bafeaa8229e6fdc41e086fa3"
+              title="LACHIN ARCHITECTS — Interior Apartment 360° tour"
+              allow="fullscreen; gyroscope; accelerometer; xr-spatial-tracking"
+              allowfullscreen></iframe>
+            <span class="rta-corner rta-corner--tl"></span>
+            <span class="rta-corner rta-corner--br"></span>
           </div>
-          <div class="rta-card" data-yt="a_ybmyr-shw">
-            <img src="https://img.youtube.com/vi/a_ybmyr-shw/maxresdefault.jpg" alt="Real-Time Interactive 3" />
-            <div class="rta-play">&#9654;</div>
+          <aside class="rta-featured-side">
+            <div class="rta-meta">
+              <div class="rta-meta-item">
+                <span class="rta-meta-label" data-i18n="rta.m.project">Project</span>
+                <span class="rta-meta-value">LACHIN ARCHITECTS — Interior Apartment</span>
+              </div>
+              <div class="rta-meta-item">
+                <span class="rta-meta-label" data-i18n="rta.m.type">Type</span>
+                <span class="rta-meta-value" data-i18n="rta.m.type.v">Interactive 360° virtual tour</span>
+              </div>
+              <div class="rta-meta-item">
+                <span class="rta-meta-label" data-i18n="rta.m.year">Year</span>
+                <span class="rta-meta-value">2026</span>
+              </div>
+              <div class="rta-meta-item">
+                <span class="rta-meta-label" data-i18n="rta.m.software">Software</span>
+                <span class="rta-meta-value">3ds Max • Corona Renderer • 360Sunum</span>
+              </div>
+            </div>
+            <p class="rta-desc" data-i18n="rta.f.desc">An apartment interior designed and visualized by LACHIN ARCHITECTS, presented as an interactive 360° tour. Move between rooms, look around freely and explore every detail of the design at your own pace — on desktop, phone or in VR.</p>
+            <p class="rta-hint">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 9 9"/><path d="M21 3v6h-6"/></svg>
+              <span data-i18n="rta.f.hint">Drag to look around · tap the hotspots to move between rooms</span>
+            </p>
+            <button class="rta-btn" type="button" data-embed="https://360sunum.com/embed/2135a949bafeaa8229e6fdc41e086fa3">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5"/></svg>
+              <span data-i18n="rta.f.fs">View fullscreen</span>
+            </button>
+          </aside>
+        </div>
+      </section>
+
+      <!-- ── 02 · UNREAL ENGINE APPLICATION ─────────────── -->
+      <section class="rta-block" id="rta-app">
+        <div class="rta-block-head">
+          <span class="rta-num">02</span>
+          <div class="rta-block-titles">
+            <p class="rta-eyebrow" data-i18n="rta.ue.eyebrow">Unreal Engine Application</p>
+            <h2 class="rta-h2" data-i18n="rta.ue.title">Interactive Architectural Application</h2>
+          </div>
+          <a class="rta-link" href="interactive-application.html"><span data-i18n="rta.ue.more">Project page</span>&nbsp;&#8599;</a>
+        </div>
+
+        <div class="rta-split">
+          <div class="rta-split-text">
+            <p class="rta-desc" data-i18n="rta.ue.desc">A real-time application built in Unreal Engine that simulates a complete residential environment — not a single render, but a living space you can explore from any angle, at any season and time of day.</p>
+            <ol class="rta-features">
+              <li data-i18n="rta.ue.f1">Drone view ↔ ground view with a seamless transition</li>
+              <li data-i18n="rta.ue.f2">MetaHuman walkthrough at 1:1 scale, interiors included</li>
+              <li data-i18n="rta.ue.f3">Surroundings &amp; amenities system with live distances</li>
+              <li data-i18n="rta.ue.f4">Ultra Dynamic Sky — 4 seasons, weather and time of day</li>
+              <li data-i18n="rta.ue.f5">Teleport, cinematic camera and screenshot tools</li>
+              <li data-i18n="rta.ue.f6">Animated traffic, construction zone, EV charging, playgrounds</li>
+            </ol>
+          </div>
+          <div class="rta-split-media">
+            <div class="rta-card rta-card--main" data-yt="pf0lx6K9D1w" tabindex="0" role="button">
+              <div class="rta-card-media">
+                <img src="https://img.youtube.com/vi/pf0lx6K9D1w/maxresdefault.jpg" alt="Architectural Interactive Application — presentation video" loading="lazy" />
+                <span class="rta-play"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+              </div>
+              <p class="rta-card-cap"><span data-i18n="rta.ue.watch">Watch the full presentation</span><span class="rta-card-tag">Video</span></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="rta-grid rta-grid--3">
+          <div class="rta-card" data-img="assets/images/REALTIME1.jpg" tabindex="0" role="button">
+            <div class="rta-card-media"><img src="assets/images/REALTIME1.jpg" alt="Street view — weather and time-of-day controls" loading="lazy" /></div>
+            <p class="rta-card-cap"><span data-i18n="rta.s1">Street view — weather &amp; time controls</span><span class="rta-card-tag">01</span></p>
+          </div>
+          <div class="rta-card" data-img="assets/images/REALTIME2.jpg" tabindex="0" role="button">
+            <div class="rta-card-media"><img src="assets/images/REALTIME2.jpg" alt="Drone view — surroundings and amenities system" loading="lazy" /></div>
+            <p class="rta-card-cap"><span data-i18n="rta.s2">Drone view — surroundings &amp; amenities</span><span class="rta-card-tag">02</span></p>
+          </div>
+          <div class="rta-card" data-img="assets/images/REALTIME3.jpg" tabindex="0" role="button">
+            <div class="rta-card-media"><img src="assets/images/REALTIME3.jpg" alt="Interior walkthrough — living room" loading="lazy" /></div>
+            <p class="rta-card-cap"><span data-i18n="rta.s3">Interior walkthrough — living room</span><span class="rta-card-tag">03</span></p>
+          </div>
+        </div>
+
+        <div class="rta-grid rta-grid--2">
+          <div class="rta-card" data-yt="O2xC4U-ouK8" tabindex="0" role="button">
+            <div class="rta-card-media">
+              <img src="https://img.youtube.com/vi/O2xC4U-ouK8/maxresdefault.jpg" alt="Interactive Application — Architectural Surroundings" loading="lazy" />
+              <span class="rta-play"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+            </div>
+            <p class="rta-card-cap"><span data-i18n="rta.v1">Architectural surroundings &amp; amenities</span><span class="rta-card-tag">Video</span></p>
+          </div>
+          <div class="rta-card" data-yt="a_ybmyr-shw" tabindex="0" role="button">
+            <div class="rta-card-media">
+              <img src="https://img.youtube.com/vi/a_ybmyr-shw/maxresdefault.jpg" alt="Interactive Application — Interior Design mode" loading="lazy" />
+              <span class="rta-play"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+            </div>
+            <p class="rta-card-cap"><span data-i18n="rta.v3">Interior design mode</span><span class="rta-card-tag">Video</span></p>
           </div>
         </div>
       </section>
 
-      <!-- Screenshots Row -->
-      <section class="rta-section">
-        <div class="rta-row">
-          <div class="rta-card" data-img="assets/images/REALTIME1.jpg">
-            <img src="assets/images/REALTIME1.jpg" alt="Screenshot 1" />
+      <!-- ── 03 · 360 VIRTUAL TOURS ─────────────────────── -->
+      <section class="rta-block" id="rta-tours">
+        <div class="rta-block-head">
+          <span class="rta-num">03</span>
+          <div class="rta-block-titles">
+            <p class="rta-eyebrow" data-i18n="rta.tours">360 Virtual Tours</p>
+            <h2 class="rta-h2" data-i18n="rta.tours.title">Previous Projects in 360°</h2>
           </div>
-          <div class="rta-card" data-img="assets/images/REALTIME2.jpg">
-            <img src="assets/images/REALTIME2.jpg" alt="Screenshot 2" />
+          <p class="rta-block-note" data-i18n="rta.tours.desc">Panoramic tours of earlier interior and architecture projects. Drag inside each window to look around.</p>
+        </div>
+        <div class="rta-tours">
+          <div class="rta-tour">
+            <iframe src="https://kuula.co/share/collection/7F886?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1" title="360 tour 1" allow="xr-spatial-tracking; gyroscope; accelerometer" allowfullscreen scrolling="no" loading="lazy"></iframe>
           </div>
-          <div class="rta-card" data-img="assets/images/REALTIME3.jpg">
-            <img src="assets/images/REALTIME3.jpg" alt="Screenshot 3" />
+          <div class="rta-tour">
+            <iframe src="https://kuula.co/share/collection/7qjYz?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1" title="360 tour 2" allow="xr-spatial-tracking; gyroscope; accelerometer" allowfullscreen scrolling="no" loading="lazy"></iframe>
+          </div>
+          <div class="rta-tour">
+            <iframe src="https://kuula.co/share/collection/71RBv?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1" title="360 tour 3" allow="xr-spatial-tracking; gyroscope; accelerometer" allowfullscreen scrolling="no" loading="lazy"></iframe>
           </div>
         </div>
       </section>
 
-      <!-- 360 Virtual Tours -->
-      <section class="rta-section">
-        <p class="rta-section-label" data-i18n="rta.tours">360 Virtual Tours</p>
-        <div class="rta-tours-row">
-          <iframe
-            src="https://kuula.co/share/collection/7F886?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1"
-            allow="xr-spatial-tracking; gyroscope; accelerometer"
-            allowfullscreen scrolling="no"></iframe>
-          <iframe
-            src="https://kuula.co/share/collection/7qjYz?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1"
-            allow="xr-spatial-tracking; gyroscope; accelerometer"
-            allowfullscreen scrolling="no"></iframe>
-          <iframe
-            src="https://kuula.co/share/collection/71RBv?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1"
-            allow="xr-spatial-tracking; gyroscope; accelerometer"
-            allowfullscreen scrolling="no"></iframe>
+      <!-- ── 04 · ANIMATION ─────────────────────────────── -->
+      <section class="rta-block" id="rta-anim">
+        <div class="rta-block-head">
+          <span class="rta-num">04</span>
+          <div class="rta-block-titles">
+            <p class="rta-eyebrow" data-i18n="rta.anim">Animation</p>
+            <h2 class="rta-h2" data-i18n="rta.anim.title">Architectural &amp; Product Animation</h2>
+          </div>
+        </div>
+        <div class="rta-grid rta-grid--3">
+          <div class="rta-card" data-yt="FBtxzU0vlhE" tabindex="0" role="button">
+            <div class="rta-card-media rta-card-media--crop" style="--crop: 1.5">
+              <img src="https://img.youtube.com/vi/FBtxzU0vlhE/maxresdefault.jpg" alt="Interior design animation" loading="lazy" />
+              <span class="rta-play"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+            </div>
+            <p class="rta-card-cap"><span data-i18n="rta.a1">Interior design animation</span><span class="rta-card-tag">Video</span></p>
+          </div>
+          <div class="rta-card" data-yt="9j5uAHOdq3o" tabindex="0" role="button">
+            <div class="rta-card-media">
+              <img src="https://img.youtube.com/vi/9j5uAHOdq3o/maxresdefault.jpg" alt="Living room CGI — before and after" loading="lazy" />
+              <span class="rta-play"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+            </div>
+            <p class="rta-card-cap"><span data-i18n="rta.a2">Living room CGI — before / after</span><span class="rta-card-tag">Video</span></p>
+          </div>
+          <div class="rta-card" data-yt="LdqgkCRyx5E" tabindex="0" role="button">
+            <div class="rta-card-media">
+              <img src="assets/images/Hyundai SantaFe/SANTA-FE-2.jpg" alt="Hyundai Santa Fe 2025 animation" loading="lazy" />
+              <span class="rta-play"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+            </div>
+            <p class="rta-card-cap"><span data-i18n="rta.a3">Hyundai Santa Fe 2025</span><span class="rta-card-tag">Video</span></p>
+          </div>
         </div>
       </section>
 
-      <!-- Animation -->
-      <section class="rta-section">
-        <p class="rta-section-label" data-i18n="rta.anim">Animation</p>
-        <div class="rta-row">
-          <div class="rta-card" data-yt="FBtxzU0vlhE">
-            <img src="https://img.youtube.com/vi/FBtxzU0vlhE/maxresdefault.jpg" alt="Animation 1" />
-            <div class="rta-play">&#9654;</div>
-          </div>
-          <div class="rta-card" data-yt="9j5uAHOdq3o">
-            <img src="https://img.youtube.com/vi/9j5uAHOdq3o/maxresdefault.jpg" alt="Animation 2" />
-            <div class="rta-play">&#9654;</div>
-          </div>
-          <div class="rta-card" data-yt="LdqgkCRyx5E">
-            <img src="https://img.youtube.com/vi/LdqgkCRyx5E/maxresdefault.jpg" alt="Animation 3" />
-            <div class="rta-play">&#9654;</div>
-          </div>
+      <!-- ── CTA ────────────────────────────────────────── -->
+      <section class="rta-cta">
+        <div class="rta-cta-text">
+          <p class="rta-eyebrow" data-i18n="rta.cta.eyebrow">Next project</p>
+          <h2 class="rta-h2 rta-h2--lg" data-i18n="rta.cta.title">Want to present your project interactively?</h2>
+          <p class="rta-desc" data-i18n="rta.cta.desc">From a 360° tour of a single apartment to a full real-time application of a residential complex — let’s find the right format for your project.</p>
         </div>
+        <a href="contact.html" class="rta-btn rta-btn--solid"><span data-i18n="rta.cta.btn">Get in touch</span>&nbsp;&#8599;</a>
       </section>
 
     </div>
@@ -248,7 +382,7 @@
 
   <!-- RTA Lightbox -->
   <div class="rta-lb" id="rtaLb">
-    <button class="rta-lb-close" id="rtaLbClose">&#x2715;</button>
+    <button class="rta-lb-close" id="rtaLbClose" aria-label="Close">&#x2715;</button>
     <div class="rta-lb-inner" id="rtaLbInner"></div>
   </div>
 
@@ -267,7 +401,7 @@
   <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
   <script>
-    const rtaLb     = document.getElementById('rtaLb');
+    const rtaLb      = document.getElementById('rtaLb');
     const rtaLbInner = document.getElementById('rtaLbInner');
     const rtaLbClose = document.getElementById('rtaLbClose');
 
@@ -283,21 +417,47 @@
       document.body.style.overflow = '';
     }
 
-    document.querySelectorAll('.rta-card').forEach(card => {
-      card.addEventListener('click', () => {
-        const yt  = card.dataset.yt;
-        const img = card.dataset.img;
-        if (yt) {
-          openRtaLb(`<iframe src="https://www.youtube.com/embed/${yt}?autoplay=1&rel=0" allow="autoplay; fullscreen" allowfullscreen></iframe>`);
-        } else if (img) {
-          openRtaLb(`<img src="${img}" alt="" />`);
-        }
+    function openFromEl(el) {
+      const yt    = el.dataset.yt;
+      const img   = el.dataset.img;
+      const embed = el.dataset.embed;
+      if (yt) {
+        openRtaLb(`<iframe src="https://www.youtube.com/embed/${yt}?autoplay=1&rel=0" allow="autoplay; fullscreen" allowfullscreen></iframe>`);
+      } else if (embed) {
+        openRtaLb(`<iframe class="rta-lb-360" src="${embed}" allow="fullscreen; gyroscope; accelerometer; xr-spatial-tracking" allowfullscreen></iframe>`);
+      } else if (img) {
+        openRtaLb(`<img src="${img}" alt="" />`);
+      }
+    }
+
+    document.querySelectorAll('.rta-card, [data-embed]').forEach(el => {
+      el.addEventListener('click', () => openFromEl(el));
+      el.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openFromEl(el); }
       });
     });
 
     rtaLb.addEventListener('click', e => { if (e.target === rtaLb) closeRtaLb(); });
     rtaLbClose.addEventListener('click', closeRtaLb);
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeRtaLb(); });
+
+    /* scroll reveal for blocks */
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); } });
+      }, { rootMargin: '0px 0px -40px 0px', threshold: 0.05 });
+      document.querySelectorAll('.rta-block, .rta-cta').forEach(b => io.observe(b));
+    } else {
+      document.querySelectorAll('.rta-block, .rta-cta').forEach(b => b.classList.add('is-in'));
+    }
+
+    /* hero video: pause when scrolled away to save battery */
+    const heroVid = document.querySelector('.rta-hero-video');
+    if (heroVid && 'IntersectionObserver' in window) {
+      new IntersectionObserver(([en]) => {
+        if (en.isIntersecting) heroVid.play().catch(() => {}); else heroVid.pause();
+      }, { threshold: 0.05 }).observe(heroVid);
+    }
   </script>
 
 </body>
